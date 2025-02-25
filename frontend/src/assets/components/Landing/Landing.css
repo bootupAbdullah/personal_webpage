@@ -4,7 +4,13 @@ main {
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    background-color: #fef1d8;
+    background: linear-gradient(
+    to bottom,
+    #fff9c4, /* Light, sunny yellow */
+    #fff59d, /* Slightly warmer yellow */
+    #ffecb3, /* Soft orange-yellow */
+    #ffe082  /* Muted orange */
+      );
     text-align: center;
     width: 100vw; /* Ensure the main element takes up the full width of the page */
   }
@@ -15,6 +21,7 @@ main {
     font-weight: bold;
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Add a shadow to make it more dynamic */
+    color:  #5D9980;
   }
   
   h1 span {
@@ -27,10 +34,11 @@ main {
     color: #0073e6; /* Change color on hover */
   }
   
-  button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
+button {
+    margin-top: 10px;
+    width: 180px;
+    height: 50px;
+    border: 4px solid  #69aaee;
+    border-radius: 15px;
+    background-color: #17546E;
+}

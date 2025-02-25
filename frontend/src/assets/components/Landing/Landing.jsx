@@ -14,7 +14,7 @@ const Landing = ({ setPage }) => {
         </h1>
       </div>
       <div>
-        <button onClick={() => setPage("Home")}>Enter</button>
+        <button onClick={() => setPage("Home")}>Discover</button>
       </div>
     </main>
   );
