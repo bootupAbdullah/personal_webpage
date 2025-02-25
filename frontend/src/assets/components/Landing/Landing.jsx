@@ -1,11 +1,21 @@
 import React from 'react';
-import './Landing.css'
+import './Landing.css';
 
 const Landing = ({ setPage }) => {
+  const text = "Akd deV";
+
   return (
     <main>
-      <h1>adk dev</h1>
-      <button onClick={() => setPage("Home")}>Enter</button>
+      <div>
+        <h1>
+          {text.split("").map((char, index) => (
+            <span key={index}>{char}</span>
+          ))}
+        </h1>
+      </div>
+      <div>
+        <button onClick={() => setPage("Home")}>Enter</button>
+      </div>
     </main>
   );
 }

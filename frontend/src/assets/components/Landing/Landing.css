@@ -1,0 +1,36 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #fef1d8;
+    text-align: center;
+    width: 100vw; /* Ensure the main element takes up the full width of the page */
+  }
+  
+  
+  h1 {
+    font-size: 10rem; /* Adjust the size as needed */
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Add a shadow to make it more dynamic */
+  }
+  
+  h1 span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  h1 span:hover {
+    transform: translateY(-10px); /* Adjust the lift effect */
+    color: #0073e6; /* Change color on hover */
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
