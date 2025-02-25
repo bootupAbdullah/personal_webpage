@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 main {
     display: flex;
     justify-content: center;
@@ -13,6 +15,7 @@ main {
       );
     text-align: center;
     width: 100vw; /* Ensure the main element takes up the full width of the page */
+    font-family: "Montserrat", serif;
   }
   
   
@@ -20,7 +23,7 @@ main {
     font-size: 10rem; /* Adjust the size as needed */
     font-weight: bold;
     margin: 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Add a shadow to make it more dynamic */
+    text-shadow: 5px 5px 5px rgba(246, 6, 6, 0.3);
     color:  #5D9980;
   }
   
@@ -36,9 +39,21 @@ main {
   
 button {
     margin-top: 10px;
+    padding: 5px;
+    font-size: 1.5em;
     width: 180px;
-    height: 50px;
-    border: 4px solid  #69aaee;
+    height: 70px;
+    border: 4px solid  black;
     border-radius: 15px;
     background-color: #17546E;
+    box-shadow: 4px 6px 0px black;
+    cursor: pointer;
+    font-weight: 600;
+    transition: border-color 0.3s ease; /* Smooth transition for color change */
+}
+
+button:hover {
+    border-color: #007bff; /* Change to your desired hover color */
+    /* You can also change other styles on hover, e.g., background color */
+    background-color: #13465b;
 }
