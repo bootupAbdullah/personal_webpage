@@ -1,21 +1,21 @@
 import React from 'react';
-import './Home.css';
+import './home.css'
 
-const Home = () => {
+const Home = ({ setPage }) => {
   return (
-    <div>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-      <h2>Welcome to my portfolio</h2>
-      {/* Add more content here */}
+    <div className='home-container-div'>
+       <div id='home-image-div'>
+        <img id="home-image-src" src="src/assets/images/profile_pic.jpg" alt="Home" />
+      </div>
+      <div className='home-application-buttons'>
+      <button onClick={() => setPage("CookieClickerGame")}>Cookie Clicker Game</button>
+      <button onClick={() => setPage("MovieWatchList")}>Movie Wachlist App</button>
+      <button onClick={() => setPage("ApplicationTracker")}>Application Tracker</button>
+      </div>
     </div>
   );
 }
 
 export default Home;
+
+

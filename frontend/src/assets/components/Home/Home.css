@@ -1,0 +1,23 @@
+.home-container-div {
+    display: flex;
+
+}
+
+#home-image-div {
+    display: flex;
+}
+
+#home-image-src {
+    width: 300px;
+}
+
+.home-application-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 10px;
+
+    
+}
+
