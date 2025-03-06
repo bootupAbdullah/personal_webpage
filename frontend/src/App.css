@@ -1,3 +1,11 @@
 body {
+    width: 100vw;
+    height: 100vh;
     background-color: #a69ef6 ;
+}
+
+.main-component {
+
+    border: 10px black solid;
+    width: 80vw;
 }

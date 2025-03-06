@@ -8,8 +8,14 @@ const App = () => {
 
   return (
     <>
+    <main className='main-component'>
+      <div id='navbar-component'> 
       <Nav />
+      </div>
+      <div id='home-component'>
       {page === "Home" && <Home setPage={setPage} />}
+      </div>
+    </main>
     </>
   );
 }
