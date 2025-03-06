@@ -1,17 +1,58 @@
 # Abdullah Durrani's Portfolio
 
-This portfolio showcases my projects and skills in web development, particularly focusing on front-end technologies and interactive web applications.
+This portfolio showcases my projects and skills in web development, with a focus on front-end technologies and interactive web applications.
 
-Explore the projects to see demonstrations of my coding abilities and design insights.
+**Explore the projects to see demonstrations of my coding abilities and design insights.**
 
+## Notes
 
+### Update: March 5, 2025
 
-# Notes:
+**Challenge Encountered:**
+I encountered difficulties in adjusting the layout when applying flex properties via the `app.css` to the `body`. The desired layout adjustments weren't achieved, which suggested that both components might need a common parent container for better control.
 
-### 3/5/2025
+Despite the `body` tag serving as a container, directly styling it in `app.css` did not produce the expected results, particularly in terms of flex spacing between the `home` and `nav` components.
 
-I've encountered difficulties in getting two components to behave correctly when applying flex properties via the app.css to the body. The desired layout adjustments weren't achieved, suggesting that both components might need a common parent container for better control.
+**Solution Implemented:**
+To address this, I introduced a `main` div as a parent for these components. Initial tests suggest that this setup allows for more precise control over component widths and layout adjustments.
 
-Although the body tag serves as an existing container, directly styling it in app.css hasn't produced the expected results, particularly in terms of flex spacing between the home and nav components.
+**Result:**
+After hours of tweaking and adding a 'main' component with specific CSS settings, I finally achieved the desired layout:
 
-To address this, I'm considering introducing a main div as a parent for these components. Initial tests suggest that this setup allows for more precise control over component widths and layout adjustments. I plan to implement and test further CSS modifications to confirm if this approach resolves the issues.
+```jsx
+return (
+  <>
+    <main className='main-component'>
+      <div id='navbar-component'> 
+        <Nav />
+      </div>
+      <div id='home-component'>
+        {page === "Home" && <Home setPage={setPage} />}
+      </div>
+    </main>
+  </>
+);
+```
+
+<details>
+<summary>Subsequent CSS that resolved the issue and yielded desired results</summary>
+
+```css
+.main-component {
+    border: 10px solid black;
+    width: 98vw;
+    height: 96vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+```
+</details>
+<br>
+
+## Current Portfolio Snapshot
+<details> 
+<summary>View Current Portfolio Build</summary> 
+
+<img src="./src/assets/images/current_portfolio_build_3:5:25.png" width="600px" height="300px" alt="Current Portfolio Build"> 
+</details> 
