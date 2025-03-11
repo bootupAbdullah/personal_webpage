@@ -1,16 +1,18 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
     width: 100vw;
     height: 100vh;
-    background-color: #eed9c4 ;
+    background-color: #eed9c4;
+    font-family: "Roboto", sans-serif;
+   
 }
 
 .main-component {
 
-    border: 10px black solid;
-    width: 98vw;
-    height: 96vh;
+    /* border: 10px black solid; */
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

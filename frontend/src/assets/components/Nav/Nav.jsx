@@ -1,5 +1,5 @@
 import React from 'react';
-import './Nav.css';;
+import './Nav.css';
 
 const Nav = () => {
     return (
@@ -7,9 +7,10 @@ const Nav = () => {
         <nav className='navbar'>
         <h2 id="site-title">akddev.co</h2>
           <ul id='nav-buttons'>
-            <li><a href="#">Home</a></li>
+            <li id='line-item-1'><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
+            <li><a href="#">SEB 10/15</a></li>
           </ul>
         </nav>
         {/* Add more content here */}

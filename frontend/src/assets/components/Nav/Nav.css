@@ -1,29 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 .navbar {
-    border: 3px solid black;
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-weight: 100;
     font-style: normal;
-    border: 5px solid yellow;
+    /* border: 5px solid yellow; */
 }
 
 #site-title {
     font-family: "Bubblegum Sans", sans-serif;
-    font-size: 6em;
+    font-size: 9em;
     padding: 1%;
     margin: 0;
     color:#a0d9ef;
-    -webkit-text-stroke: 3px black;
+    -webkit-text-stroke: 3px 	#0006b1;
+    text-shadow: 5px 5px 5px yellow;
+    font-synthesis: none;
+    
 }
 
 #nav-buttons{
-    border: 1px solid yellow;
     width: 20%;
     display: flex;
+    font-weight: 700;
     flex-direction: row;
     justify-content: space-around;
+    list-style-type: none;
+    font-size: 1.3em;
+    color: yellow
+}
+
+#nav-buttons a {
+    color: yellow;
+    text-decoration: none;
+
 }
