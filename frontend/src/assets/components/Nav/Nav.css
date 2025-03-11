@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 .navbar {
     display: flex;
@@ -16,25 +16,59 @@
     padding: 1%;
     margin: 0;
     color:#a0d9ef;
-    -webkit-text-stroke: 3px 	#0006b1;
+    -webkit-text-stroke: 3px #0006b1;
     text-shadow: 5px 5px 5px yellow;
     font-synthesis: none;
     
 }
 
-#nav-buttons{
-    width: 20%;
+#nav-button-container {
     display: flex;
-    font-weight: 700;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#nav-buttons{
+    width: 50%;
+    display: flex;
+    font-weight: 500;
     flex-direction: row;
     justify-content: space-around;
     list-style-type: none;
     font-size: 1.3em;
-    color: yellow
+    color: yellow;
+    font-family: "Roboto", sans-serif;
+    background-color: #0006b1;
+    border: black 5px solid;
+    padding: 1%;
+    
 }
 
 #nav-buttons a {
-    color: yellow;
+    color: black;
     text-decoration: none;
+}
 
+#line-item-1 {
+    background-color: yellow;
+    width: 15%;
+    text-indent: 30%;
+}
+
+#line-item-2 {
+    background-color: yellow;
+    width: 15%;
+    text-indent: 30%;
+}
+
+#line-item-3 {
+    background-color: yellow;
+    width: 15%;
+    text-indent: 25%;
+}
+
+#line-item-4 {
+    background-color: yellow;
+    width: 15%;
+    text-indent: 15%;
 }
