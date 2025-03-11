@@ -6,7 +6,7 @@ const Nav = () => {
       <div>
         <nav className='navbar'>
         <h2 id="site-title">akddev.co</h2>
-          <ul>
+          <ul id='nav-buttons'>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
