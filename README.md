@@ -54,5 +54,5 @@ return (
 <details> 
 <summary>View Current Portfolio Build</summary> 
 
-<img src="./src/assets/images/current_portfolio_build_3:5:25.png" width="600px" height="300px" alt="Current Portfolio Build"> 
+<img src="frontend/src/assets/images/current_portfolio_build_3:5:25.png" width="600px" height="300px" alt="Current Portfolio Build"> 
 </details> 
