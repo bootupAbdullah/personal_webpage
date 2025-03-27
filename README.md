@@ -1,6 +1,6 @@
 # Abdullah Durrani's Portfolio
 
-This portfolio showcases my projects and skills in web development, with a focus on front-end technologies and interactive web applications.
+This portfolio showcases my projects and skills in web development, particularly in front-end technologies and interactive web applications. The estimated date of completion is 4/25/2025, reflecting my peak commitments as a tax preparer during this period.
 
 **Explore the projects to see demonstrations of my coding abilities and design insights.**
 
