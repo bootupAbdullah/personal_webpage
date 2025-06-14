@@ -11,6 +11,7 @@ const Home = ({ setPage }) => {
       <button onClick={() => setPage("CookieClickerGame")}>Cookie Clicker Game</button>
       <button onClick={() => setPage("MovieWatchList")}>Movie Wachlist App</button>
       <button onClick={() => setPage("ApplicationTracker")}>Application Tracker</button>
+      <button onClick={() => setPage("InterviewShare")}>Interview Sharing<br />Platform</button>
       </div>
     </div>
   );
