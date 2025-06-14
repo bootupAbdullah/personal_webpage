@@ -9,11 +9,20 @@ body {
 }
 
 .main-component {
-
-    /* border: 10px black solid; */
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /* border: 8px solid yellow; */
 }
+
+#home-component {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+

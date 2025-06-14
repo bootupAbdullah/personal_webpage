@@ -14,8 +14,7 @@
 #site-title {
     /* font-family: "Bubblegum Sans", sans-serif; */
     font-family: "Merriweather", serif;
-    font-size: 6em;
-    padding: 1%;
+    font-size: 5em;
     margin: 0;
     color:black;
     font-synthesis: none;
@@ -46,8 +45,8 @@
     border: 1px black solid;
     height: 1px;
     background-color: black;
-    width: 60%;
-    margin-left: .5%; 
+    width: 65%;
+    margin-left: 1%; 
 
 }
 

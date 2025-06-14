@@ -56,3 +56,77 @@ return (
 
 <img src="frontend/src/assets/images/current_portfolio_build_3:5:25.png" width="600px" height="300px" alt="Current Portfolio Build"> 
 </details> 
+
+## Updates: June 14th, 2025
+
+- **Single-Page Layout:**  
+  The landing page now displays the site title, navigation bar, centered profile image, and project buttons—all visible within the viewport without scrolling.
+- **Component Organization:**  
+  The project uses a clear folder structure with separate directories for components (`Home`, `Nav`, `Footer`), images, and styles.
+- **Responsive Flexbox:**  
+  The main layout is managed using a flex column (`.main-component`), with the center content (`#home-component`) flexed to fill available space between the navbar and footer.
+- **Footer Integration:**  
+  The footer is now part of the main layout flow, always visible at the bottom of the page, and no longer fixed or overlapping content.
+- **Button Styling:**  
+  Project buttons are styled with a modern pill look, increased size, and spacing for better usability and aesthetics.
+- **No Fixed Heights:**  
+  Removed fixed heights from the home container and reduced footer padding to eliminate unnecessary scroll and ensure all content fits naturally.
+- **Clean CSS:**  
+  Unused or unnecessary CSS properties were removed for maintainability and clarity.
+
+### Example Main Layout
+
+```jsx
+return (
+  <>
+    <main className='main-component'>
+      <div id='navbar-component'> 
+        <Nav />
+      </div>
+      <div id='home-component'>
+        {page === "Home" && <Home setPage={setPage} />}
+      </div>
+      <Footer />
+    </main>
+  </>
+);
+```
+
+### Example CSS for Layout
+
+```css
+.main-component {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#home-component {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+```
+
+---
+
+## Current Portfolio Snapshot
+
+<details>
+<summary>View Current Portfolio Build</summary>
+
+<!-- Replace the image below with your latest screenshot -->
+<img src="/Users/akd_dev/Programming/portfolio_projetcs/personal_webpage/frontend/src/assets/images/webpage_snapshot_june_14th_2025.png" width="600px" alt="Current Portfolio Build">
+</details>
+
+---
+
+## Notes
+
+- The layout is now fully visible on a single page without scroll.
+- The codebase is organized for easy updates and future enhancements.
+- Room is left for further responsiveness and additional features as needed.
+
+---

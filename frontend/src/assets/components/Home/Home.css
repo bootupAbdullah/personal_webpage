@@ -4,10 +4,8 @@
     border: 5px solid black;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
     border: 5px solid white;
     gap: 8rem;
-    height: calc(100vh - 100px);
 }
 
 #home-image-div {
@@ -24,7 +22,7 @@
     justify-content: space-evenly;
     align-items: center;
     margin-left: 10px;
-    gap: 5rem
+    gap: 3rem
 }
 
 
