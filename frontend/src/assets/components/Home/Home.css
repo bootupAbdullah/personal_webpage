@@ -1,7 +1,12 @@
 
 .home-container-div {
     display: flex;
+    border: 5px solid black;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
     border: 5px solid white;
+    gap: 8rem;
 }
 
 #home-image-div {
