@@ -10,6 +10,8 @@
 
 #home-image-div {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #home-image-src {
@@ -50,3 +52,23 @@ button:hover {
   button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
   }
+
+  .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.social-icons img {
+  width: 32px;
+  height: 32px;
+  filter: invert(0); /* black icons */
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.social-icons img:hover {
+  filter: invert(0.5) sepia(1) hue-rotate(200deg) saturate(5);
+  transform: scale(1.1);
+}

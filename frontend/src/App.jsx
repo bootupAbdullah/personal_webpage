@@ -1,25 +1,25 @@
-import { useState } from 'react';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
 import Home from './assets/components/Home/Home';
 import Nav from './assets/components/Nav/Nav';
 import Footer from './assets/components/Footer/Footer';
+import About from './assets/components/About/About';
 
 const App = () => {
-  const [page, setPage] = useState("Home");
-
   return (
-    <>
     <main className='main-component'>
-      <div id='navbar-component'> 
-      <Nav />
+      <div id='navbar-component'>
+        <Nav />
       </div>
-      <div id='home-component'>
-      {page === "Home" && <Home setPage={setPage} />}
-      </div>
-    <Footer /> {}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+      <Footer />
     </main>
-    </>
   );
-}
+};
 
 export default App;
+
+
