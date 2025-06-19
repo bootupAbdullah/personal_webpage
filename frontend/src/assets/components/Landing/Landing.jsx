@@ -1,23 +1,23 @@
-import React from 'react';
-import './Landing.css';
+// import React from 'react';
+// import './Landing.css';
 
-const Landing = ({ setPage }) => {
-  const text = "Akd deV";
+// const Landing = ({ setPage }) => {
+//   const text = "Akd deV";
 
-  return (
-    <main>
-      <div>
-        <h1>
-          {text.split("").map((char, index) => (
-            <span key={index}>{char}</span>
-          ))}
-        </h1>
-      </div>
-      <div>
-        <button onClick={() => setPage("Home")}>Discover</button>
-      </div>
-    </main>
-  );
-}
+//   return (
+//     <main>
+//       <div>
+//         <h1>
+//           {text.split("").map((char, index) => (
+//             <span key={index}>{char}</span>
+//           ))}
+//         </h1>
+//       </div>
+//       <div>
+//         <button onClick={() => setPage("Home")}>Discover</button>
+//       </div>
+//     </main>
+//   );
+// }
 
-export default Landing;
+// export default Landing;

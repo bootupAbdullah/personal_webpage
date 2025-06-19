@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
+/* 
 main {
     display: flex;
     justify-content: center;
@@ -8,19 +7,19 @@ main {
     height: 100vh;
     background: linear-gradient(
     to bottom,
-    #fff9c4, /* Light, sunny yellow */
-    #fff59d, /* Slightly warmer yellow */
-    #ffecb3, /* Soft orange-yellow */
-    #ffe082  /* Muted orange */
+    #fff9c4, 
+    #fff59d, 
+    #ffecb3, 
+    #ffe082  
       );
     text-align: center;
-    width: 100vw; /* Ensure the main element takes up the full width of the page */
+    width: 100vw; 
     font-family: "Montserrat", serif;
   }
   
   
   h1 {
-    font-size: 10rem; /* Adjust the size as needed */
+    font-size: 10rem; 
     font-weight: bold;
     margin: 0;
     text-shadow: 5px 5px 5px rgba(246, 6, 6, 0.3);
@@ -33,8 +32,8 @@ main {
   }
   
   h1 span:hover {
-    transform: translateY(-10px); /* Adjust the lift effect */
-    color: #0073e6; /* Change color on hover */
+    transform: translateY(-10px); 
+    color: #0073e6; 
   }
   
 button {
@@ -49,11 +48,10 @@ button {
     box-shadow: 4px 6px 0px black;
     cursor: pointer;
     font-weight: 600;
-    transition: border-color 0.3s ease; /* Smooth transition for color change */
+    transition: border-color 0.3s ease; 
 }
 
 button:hover {
-    border-color: #007bff; /* Change to your desired hover color */
-    /* You can also change other styles on hover, e.g., background color */
+    border-color: #007bff; 
     background-color: #13465b;
-}
+} */

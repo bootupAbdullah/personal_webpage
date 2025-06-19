@@ -5,7 +5,7 @@ const Home = ({ setPage }) => {
   return (
     <div className='home-container-div'>
       <div id='home-image-div'>
-        <img
+        <img className='profile-image'
           id="home-image-src"
           src="src/assets/images/profile_pic.jpg"
           alt="Home"
@@ -26,7 +26,7 @@ const Home = ({ setPage }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
+            <img className='social-icon-basic'
               src="src/assets/images/svg/github-142-svgrepo-com.svg"
               alt="GitHub"
             />
@@ -46,7 +46,7 @@ const Home = ({ setPage }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
+            <img className='social-icon-basic'
               src="src/assets/images/svg/bluesky_media_kit_logo_1.svg"
               alt="Bluesky"
             />

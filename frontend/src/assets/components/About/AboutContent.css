@@ -23,8 +23,8 @@
 .about-content__arrow-btn {
   cursor: pointer;
   margin-bottom: 0px;
-  width: 30px !important;
-  height: 30px;
+  width: 90px;
+  height: 70px;
   border-radius: 50%;
   background: black;
   display: flex;

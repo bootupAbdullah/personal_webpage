@@ -61,10 +61,18 @@ button:hover {
   flex-wrap: wrap;
 }
 
-.social-icons img {
+/* .social-icons img {
   width: 32px;
   height: 32px;
-  filter: invert(0); /* black icons */
+  filter: invert(0); 
+  transition: filter 0.2s, transform 0.2s;
+} */
+
+
+.social-icon-basic {
+  width: 32px;
+  height: 32px;
+  filter: invert(0);
   transition: filter 0.2s, transform 0.2s;
 }
 
