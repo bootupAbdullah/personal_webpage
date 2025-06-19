@@ -4,19 +4,18 @@
     align-items: center;
     padding: 2rem;
     max-width: 800px;
-    margin: 0 auto;
 }
 
-.about-content__header h1 {
+/* .about-content__header h1 {
   font-size: 1.5rem;
   font-weight: 700;
-}
+} */
+
 
 .about-content__text p {
-  margin: 0px;
   font-size: 1rem;
-  line-height: 1.6;
-  max-width: 700px;
+  line-height: em;
+  border: 1px solid #ccc;
 }
 
 .about-content__arrow-btn {
