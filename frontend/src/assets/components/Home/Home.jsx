@@ -16,7 +16,7 @@ const Home = ({ setPage }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
+            <img className='social-icons-fill'
               src="src/assets/images/svg/twitter-svgrepo-com.svg"
               alt="Twitter"
             />
@@ -36,7 +36,7 @@ const Home = ({ setPage }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
+            <img className='social-icons-fill'
               src="src/assets/images/svg/linkedin-rounded-border-svgrepo-com.svg" 
               alt="LinkedIn"
             />
@@ -47,7 +47,7 @@ const Home = ({ setPage }) => {
             rel="noopener noreferrer"
           >
             <img
-              src="src/assets/images/svg/cloud-svgrepo-com.svg"
+              src="src/assets/images/svg/bluesky_media_kit_logo_1.svg"
               alt="Bluesky"
             />
           </a>

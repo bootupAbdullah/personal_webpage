@@ -2,15 +2,20 @@ import React from 'react';
 import './About.css';
 
 const About = () => {
-  return (
-    <div className="about-page">
-      <h1>Hello! 👋</h1>
-      <p>Hi, I’m Abdullah — a self-taught software developer with a background in accounting and a deep interest in building tools that are thoughtful, reliable, and grounded in real-world impact.</p>
-      <p>After several years in finance, I transitioned into tech and have been gaining hands-on experience, particularly in nonprofit spaces. I'm now looking for my first software development role.</p>
-      <p>I’ve found myself especially drawn to working with APIs. One of my favorite projects integrated the Marvel API into a full MERN stack application. It challenged me to navigate authentication, manage asynchronous data flows, and design a responsive UI with real-time feedback.</p>
-      <p>Right now, I’m focused on growing as a developer, contributing to mission-aligned teams, and writing code that serves people well.</p>
-    </div>
-  );
+ return (
+   <div className="about-page">
+     <h1>Hello! 👋</h1>
+     <p>I'm a software engineer who transitioned from accounting to build meaningful, user-centered applications. After years in finance, I discovered my passion for creating tools that solve real problems.</p>
+     
+     <p>I completed General Assembly's intensive software engineering program, building full-stack applications with React, Node.js, Python, and Django. My projects include a Marvel API integration with authentication, an interview sharing platform, and a movie recommendation app—deployed using Netlify and Railway.</p>
+     
+     <p>Currently, I'm contributing to open-source projects through the ProgramEarth DevSecOps Fellowship, expanding my skills in cloud infrastructure and CI/CD pipelines. My accounting background brings discipline and attention to detail to my development work.</p>
+     
+     <p>I'm seeking my first software development role where I can contribute technical skills, collaborate with mission-aligned teams, and continue building applications that serve people well.</p>
+
+     <p><strong>Tech Stack:</strong> JavaScript, React, Node.js, Python, Django, Netlify, Railway, MongoDB, PostgreSQL, AWS</p>
+   </div>
+ );
 };
 
 export default About;
