@@ -1,3 +1,6 @@
+
+
+
 .about-page {
   display: flex;
   flex-direction: column;
@@ -7,7 +10,6 @@
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
-  font-family: "Roboto", sans-serif;
   color: #333;
   text-align: center;
 }
