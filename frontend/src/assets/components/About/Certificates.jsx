@@ -1,17 +1,16 @@
 import React from 'react';
+import './Certificates.css';
 
 const Certificates = ({ onToggle }) => (
-  <div>
-    <button onClick={onToggle} className="back-btn">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16 19L9 12L16 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    </button>
+  <div className='certificates-container'>
     <h2>Certifications</h2>
     <ul>
       <li>Software Engineering Immersive - General Assembly</li>
       <li>Responsive Web Design - freeCodeCamp</li>
     </ul>
+     <button onClick={onToggle} className="back-btn">
+      <img src="src/assets/images/svg/left-arrow-svgrepo-com.svg" alt="Back" />
+    </button>
   </div>
 );
 
