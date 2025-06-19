@@ -1,22 +1,40 @@
-h1 {
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content__header h1 {
   font-size: 1.5rem;
   font-weight: 700;
 }
 
-p {
+.about-content__text p {
   margin: 0px;
   font-size: 1rem;
   line-height: 1.6;
   max-width: 700px;
 }
 
-.arrow-btn {
+.about-content__arrow-btn {
   cursor: pointer;
   margin-top: 1rem;
+  width: 60px;
+  height: 100px;
+  border-radius: 50%;
+  background: black;
+  border: 3px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
-.arrow-btn img {
-  width: 24px;
-  height: 24px;
+.about-content__arrow-btn img {
+  width: 80px;
+  height: 50px;
   filter: invert(1);
 }
