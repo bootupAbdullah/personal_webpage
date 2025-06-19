@@ -23,17 +23,17 @@
 .about-content__arrow-btn {
   cursor: pointer;
   margin-bottom: 0px;
-  width: 90px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: black;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0; /* Override the button padding */
 }
 
 .about-content__arrow-btn img {
-  width: 30px;
   height: 40px;
   filter: invert(1);
 }
