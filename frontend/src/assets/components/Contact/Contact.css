@@ -1,0 +1,49 @@
+.contact-page {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ gap: 1.5rem;
+ padding: 2rem;
+ max-width: 800px;
+ margin: 0 auto;
+ font-family: "Roboto", sans-serif;
+ color: #333;
+ text-align: center;
+}
+
+.contact-page h1 {
+ font-size: 2.5rem;
+ font-weight: 700;
+}
+
+.contact-page p {
+ font-size: 1.1rem;
+ line-height: 1.6;
+ max-width: 700px;
+}
+
+.contact-info {
+ display: flex;
+ flex-direction: column;
+ gap: 0.5rem;
+ margin-top: 1rem;
+}
+
+.contact-links {
+ display: flex;
+ flex-direction: column;
+ gap: 0.5rem;
+ margin-top: 1rem;
+}
+
+.contact-links a {
+ color: #646cff;
+ text-decoration: none;
+ transition: color 0.2s;
+}
+
+.contact-links a:hover {
+ color: #333;
+ text-decoration: underline;
+}
