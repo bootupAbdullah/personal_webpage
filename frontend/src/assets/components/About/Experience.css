@@ -1,0 +1,65 @@
+.experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  /* border: 1px solid #ccc; */
+}
+
+.experience__header .experience__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.experience__content .experience__section {
+  text-align: left;
+}
+
+.experience__section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.experience__job {
+  margin-bottom: 1.5rem;
+}
+
+.experience__company-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.experience__job-title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.experience__job-description {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.experience__back-btn {
+  cursor: pointer;
+  margin-bottom: 0px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Override the button padding */
+}
+
+.experience__back-icon {
+  width: 80px;
+  height: 50px;
+  filter: invert(1);
+}

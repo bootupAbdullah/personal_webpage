@@ -21,7 +21,7 @@ const AboutContent = ({ onToggle }) => (
     
     <div className="about-content__actions">
       <button onClick={onToggle} className="about-content__arrow-btn">
-        <img src="src/assets/images/svg/right-arrow-svgrepo-com.svg" alt="View Certifications" />
+        <img src="src/assets/images/svg/right-arrow-svgrepo-com.svg" alt="View Experience" />
       </button>
     </div>
   </div>
