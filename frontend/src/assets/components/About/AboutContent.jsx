@@ -8,7 +8,7 @@ const AboutContent = ({ onToggle }) => (
     </div>
     
     <div className="about-content__text">
-      <p>I'm a software engineer who transitioned from accounting to build meaningful, user-centered applications. After years in finance, I discovered my passion for creating tools that solve real problems.</p>
+      <p>I'm a software engineer who transitioned from accounting to build meaningful, user-centered applications. After a few years in finance, I discovered my passion for creating tools that solve real problems.</p>
       
       <p>I completed General Assembly's intensive software engineering program, building full-stack applications with React, Node.js, Python, and Django. My projects include a Marvel API integration with authentication, an interview sharing platform, and a movie recommendation app — deployed using Netlify and Railway.</p>
       
