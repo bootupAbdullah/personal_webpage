@@ -8,8 +8,13 @@ const Experience = ({ onToggle }) => (
     </div>
     
     <div className="experience__content">
-      <div className="experience__section">
-        <h3 className="experience__section-title">SOFTWARE ENGINEER</h3>
+      <div className="experience__jobs">
+        
+        <div className="experience__job">
+          <h4 className="experience__company-name">ProgramEarth</h4>
+          <p className="experience__job-title">DevSecOps Fellow | Currently Enrolled</p>
+          <p className="experience__job-description">10-week open-source fellowship focused on secure full-stack development using Docker, Node.JS, Twilio, CI/CD, and GitHub Actions. Contributing to real codebases and participating in cloud infrastructure workshops.</p>
+        </div>
         
         <div className="experience__job">
           <h4 className="experience__company-name">General Assembly, Remote</h4>
@@ -23,17 +28,12 @@ const Experience = ({ onToggle }) => (
           <p className="experience__job-description">Process client tax data using ProSeries software, ensuring regulatory compliance. Developed Python automation script for document management.</p>
         </div>
         
-        <div className="experience__job">
-          <h4 className="experience__company-name">Copper Spring Apartments, Henrico, VA</h4>
-          <p className="experience__job-title">Leasing Consultant | March 2019 – September 2021</p>
-          <p className="experience__job-description">Managed resident services, guided prospective tenants through needs assessments, and conducted competitive market analysis.</p>
-        </div>
       </div>
     </div>
     
     <div className="experience__actions">
       <button className="experience__back-btn" onClick={onToggle}>
-        <img className="experience__back-icon" src="src/assets/images/svg/left-arrow-svgrepo-com.svg" alt="Back" />
+        <img className="experience__back-icon" src="images/svg/left-arrow-svgrepo-com.svg" alt="Back" />
       </button>
     </div>
   </div>
