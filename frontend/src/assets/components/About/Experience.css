@@ -9,7 +9,6 @@
   overflow-y: auto;
 }
 
-
 .experience__header .experience__title {
   font-size: 2em;
   font-weight: 700;
@@ -65,4 +64,24 @@
   width: 40px;
   height: 40px;
   filter: invert(1);
+}
+
+.experience__title-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.experience__download-btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience__download-btn img {
+  width: 24px;
+  height: 24px;
 }

@@ -4,7 +4,17 @@ import './Experience.css';
 const Experience = ({ onToggle }) => (
   <div className="experience">
     <div className="experience__header">
-      <h2 className="experience__title">Experience</h2>
+      <div className="experience__title-row">
+        <h2 className="experience__title">Experience</h2>
+        <a 
+          href="/documents/Resume.pdf" 
+          download="Abdullah_Durrani_Resume.pdf"
+          className="experience__download-btn"
+          title="Download Full Resume"
+        >
+          <img src="images/svg/download-svgrepo-com.svg" alt="Download Resume" />
+        </a>
+      </div>
     </div>
     
     <div className="experience__content">
