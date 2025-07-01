@@ -6,12 +6,18 @@
     align-items: center;
     border: 5px solid white;
     gap: 8rem;
+    height: 70vh;
 }
 
 #home-image-div {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+}
+
+.profile-image {
+  border: 2px solid black;
 }
 
 #home-image-src {
@@ -60,13 +66,6 @@ button:hover {
   margin-top: 1.5rem;
   flex-wrap: wrap;
 }
-
-/* .social-icons img {
-  width: 32px;
-  height: 32px;
-  filter: invert(0); 
-  transition: filter 0.2s, transform 0.2s;
-} */
 
 
 .social-icon-basic {

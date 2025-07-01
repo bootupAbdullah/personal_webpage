@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AboutContent from './AboutContent';
-import Certificates from './Certificates';
+import Experience from './Experience';
 import './About.css';
 
 const About = () => {
@@ -10,7 +10,7 @@ const About = () => {
 
   return (
     <div className="about-page">
-      {showCerts ? <Certificates onToggle={toggleView} /> : <AboutContent onToggle={toggleView} />}
+      {showCerts ? <Experience onToggle={toggleView} /> : <AboutContent onToggle={toggleView} />}
     </div>
   );
 };

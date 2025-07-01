@@ -8,20 +8,20 @@ const AboutContent = ({ onToggle }) => (
     </div>
     
     <div className="about-content__text">
-      <p>I'm a software engineer who transitioned from accounting to build meaningful, user-centered applications. After a few years in finance, I discovered my passion for creating tools that solve real problems.</p>
+      <p>I'm a software engineer who discovered programming while working in tax preparation. What started as evening and weekend learning became a passion I couldn't ignore.</p>
       
-      <p>I completed General Assembly's intensive software engineering program, building full-stack applications with React, Node.js, Python, and Django. My projects include a Marvel API integration with authentication, an interview sharing platform, and a movie recommendation app — deployed using Netlify and Railway.</p>
+      <p>After nearly two years of self-study, I took a leap and completed General Assembly's intensive software engineering program. I built full-stack applications exploring everything from API integrations to user authentication, always focused on solving real problems.</p>
       
-      <p>Currently, I'm contributing to open-source projects through the ProgramEarth DevSecOps Fellowship, expanding my skills in cloud infrastructure and CI/CD pipelines. My accounting background brings discipline and attention to detail to my development work.</p>
+      <p>Currently, I'm contributing to open-source projects through the ProgramEarth DevSecOps Fellowship while continuing to learn and build. My accounting background taught me discipline and attention to detail - qualities that serve me well in development.</p>
       
-      <p>I'm seeking my first software development role where I can contribute technical skills, collaborate with mission-aligned teams, and continue building applications that serve people well.</p>
+      <p>I'm ready for my first software development role where I can contribute, collaborate, and keep growing as a developer.</p>
       
-      <p><strong>Tech Stack:</strong> JavaScript, React, Node.js, Python, Django, Netlify, Railway, MongoDB, PostgreSQL, AWS</p>
+      <p><strong>Tech Stack:</strong> JavaScript, React, Node.js, Python, Django, MongoDB, PostgreSQL, AWS</p>
     </div>
     
     <div className="about-content__actions">
       <button onClick={onToggle} className="about-content__arrow-btn">
-        <img src="src/assets/images/svg/right-arrow-svgrepo-com.svg" alt="View Certifications" />
+        <img src="images/svg/right-arrow-svgrepo-com.svg" alt="View Experience" />
       </button>
     </div>
   </div>

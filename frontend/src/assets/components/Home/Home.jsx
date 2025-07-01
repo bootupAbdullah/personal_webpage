@@ -7,7 +7,7 @@ const Home = ({ setPage }) => {
       <div id='home-image-div'>
         <img className='profile-image'
           id="home-image-src"
-          src="src/assets/images/profile_pic.jpg"
+          src="/images/profile_pic.jpg"
           alt="Home"
         />
         <div className="social-icons">
@@ -17,7 +17,7 @@ const Home = ({ setPage }) => {
             rel="noopener noreferrer"
           >
             <img className='social-icons-fill'
-              src="src/assets/images/svg/twitter-svgrepo-com.svg"
+              src="images/svg/twitter-svgrepo-com.svg"
               alt="Twitter"
             />
           </a>
@@ -27,7 +27,7 @@ const Home = ({ setPage }) => {
             rel="noopener noreferrer"
           >
             <img className='social-icon-basic'
-              src="src/assets/images/svg/github-142-svgrepo-com.svg"
+              src="images/svg/github-142-svgrepo-com.svg"
               alt="GitHub"
             />
           </a>
@@ -37,7 +37,7 @@ const Home = ({ setPage }) => {
             rel="noopener noreferrer"
           >
             <img className='social-icons-fill'
-              src="src/assets/images/svg/linkedin-rounded-border-svgrepo-com.svg" 
+              src="images/svg/linkedin-svgrepo-com.svg" 
               alt="LinkedIn"
             />
           </a>
@@ -47,7 +47,7 @@ const Home = ({ setPage }) => {
             rel="noopener noreferrer"
           >
             <img className='social-icon-basic'
-              src="src/assets/images/svg/bluesky_media_kit_logo_1.svg"
+              src="images/svg/bluesky_media_kit_logo_1.svg"
               alt="Bluesky"
             />
           </a>

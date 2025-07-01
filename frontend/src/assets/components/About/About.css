@@ -5,10 +5,12 @@
   align-items: center;
   gap: 1.5rem;
   padding: 2rem;
-  max-width: 800px;
   margin: 0 auto;
   color: #333;
+  /* border: 1px solid black; */
   text-align: center;
+  height: 70vh; 
+  overflow: hidden; 
 }
 
 .about-page h1 {

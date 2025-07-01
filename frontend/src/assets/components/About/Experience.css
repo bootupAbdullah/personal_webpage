@@ -1,0 +1,87 @@
+.experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  width: 70%;
+  height: 95%;
+  /* border: 1px solid red; */
+  overflow-y: auto;
+}
+
+.experience__header .experience__title {
+  font-size: 2em;
+  font-weight: 700;
+  text-align: center;
+}
+
+
+.experience__jobs {
+  text-align: left;
+  width: 100%;
+}
+
+.experience__company-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.experience__job-title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.experience__job-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #666;
+}
+
+.experience__actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.experience__back-btn {
+  cursor: pointer;
+  margin-bottom: 0px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.experience__back-icon {
+  width: 40px;
+  height: 40px;
+  filter: invert(1);
+}
+
+.experience__title-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.experience__download-btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience__download-btn img {
+  width: 24px;
+  height: 24px;
+}
