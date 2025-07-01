@@ -54,7 +54,7 @@ return (
 <details> 
 <summary>View Current Portfolio Build</summary> 
 
-<img src="frontend/src/assets/images/current_portfolio_build_3:5:25.png" width="600px" height="300px" alt="Current Portfolio Build"> 
+<img src="images/current_portfolio_build_3:5:25.png" width="600px" height="300px" alt="Current Portfolio Build"> 
 </details> 
 
 ## Updates: June 14th, 2025
@@ -118,7 +118,7 @@ return (
 <summary>View Current Portfolio Build</summary>
 
 <!-- Replace the image below with your latest screenshot -->
-<img src="/Users/akd_dev/Programming/portfolio_projetcs/personal_webpage/frontend/src/assets/images/webpage_snapshot_june_14th_2025.png" width="600px" alt="Current Portfolio Build">
+<img src="images/webpage_snapshot_june_14th_2025.png" width="600px" alt="Current Portfolio Build">
 </details>
 
 ---
