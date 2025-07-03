@@ -79,7 +79,7 @@
 ## 📞 Contact
 - **Website:** [akddev.co](https://akddev.co)
 - **Email:** [akddev.co@gmail.com]
-- **LinkedIn:** [www.linkedin.com/in/abdullah-durrani]
+- **LinkedIn:** [LinkedIn)(www.linkedin.com/in/abdullah-durrani)
 
 ---
 
