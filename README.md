@@ -76,10 +76,10 @@
 ```
 </details>
 
-## 📞 Contact
+## ✉️ Contact
 - **Website:** [akddev.co](https://akddev.co)
-- **Email:** [akddev.co@gmail.com]
-- **LinkedIn:** [LinkedIn)(www.linkedin.com/in/abdullah-durrani)
+- **Email:** [akddev.co@gmail.com](mailto:akddev.co@gmail.com)
+- **[LinkedIn](www.linkedin.com/in/abdullah-durrani)**
 
 ---
 
