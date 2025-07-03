@@ -2,9 +2,9 @@
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-akddev.co-blue?style=for-the-badge)](https://akddev.co)
 [![GitHub Release](https://img.shields.io/github/v/release/bootupAbdullah/personal_webpage?style=for-the-badge&color=4CAF50)](https://github.com/bootupAbdullah/personal_webpage/releases)
+[![License](https://img.shields.io/github/license/bootupAbdullah/personal_webpage?style=for-the-badge&color=2196F3)](https://github.com/bootupAbdullah/personal_webpage/blob/main/LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/bootupAbdullah/personal_webpage?style=for-the-badge)](https://github.com/bootupAbdullah/personal_webpage)
 [![Build Status](https://img.shields.io/badge/Build-Passing-green?style=for-the-badge)](https://akddev.co)
-[![License](https://img.shields.io/github/license/bootupAbdullah/personal_webpage?style=for-the-badge&color=2196F3)](https://github.com/bootupAbdullah/personal_webpage/blob/main/LICENSE)
 
 > A modern, responsive portfolio showcasing web development projects and skills in front-end technologies and interactive applications.
 
