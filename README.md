@@ -78,8 +78,8 @@
 
 ## 📞 Contact
 - **Website:** [akddev.co](https://akddev.co)
-- **Email:** [your.email@domain.com]
-- **LinkedIn:** [Your LinkedIn]
+- **Email:** [akddev.co@gmail.com]
+- **LinkedIn:** [www.linkedin.com/in/abdullah-durrani]
 
 ---
 
