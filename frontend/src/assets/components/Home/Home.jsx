@@ -77,7 +77,14 @@ const Home = ({ setPage }) => {
         >
           Movie Watchlist App
         </button>
-        <button onClick={() => setPage("ApplicationTracker")}>
+        <button onClick={() =>
+            window.open(
+              'https://application-tracker-dash.netlify.app/',
+              '_blank',
+              'noopener,noreferrer'
+            )
+          }
+          >
           Application Tracker
         </button>
       </div>
