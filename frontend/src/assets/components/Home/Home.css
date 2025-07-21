@@ -45,6 +45,7 @@ button {
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
   margin: 0.2em 0;
+  -webkit-text-stroke: 0.4px yellow;
 
 }
 

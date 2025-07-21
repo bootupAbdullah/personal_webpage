@@ -14,12 +14,14 @@
 }
 
 #site-title {
-   /* font-family: "Edu NSW ACT Cursive", cursive; */
-   font-family: "Dancing Script";
-   font-size: 5.5em;
-   margin: 0;
-   color: #74370d;
-   font-synthesis: none;
+  
+    font-family: "Dancing Script";
+    font-size: 5.5em;
+    margin: 0;
+    color: #74370d;
+    font-synthesis: none;
+    text-decoration: none;
+    -webkit-text-stroke: 0.3px yellow;
 }
 
 #nav-button-container {
@@ -36,6 +38,7 @@
     list-style-type: none;
     font-size: 1.3em;
     font-family: "Merriweather", serif;
+    -webkit-text-stroke: 0.3px yellow;
 }
 
 #nav-buttons a {
