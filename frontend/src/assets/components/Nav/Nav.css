@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+
+
 .navbar {
     display: flex;
     justify-content: space-around;
@@ -8,11 +14,12 @@
 }
 
 #site-title {
-    /* font-family: "Bubblegum Sans", sans-serif; */
-    font-size: 5.5em;
-    margin: 0;
-    color:black;
-    font-synthesis: none;
+   /* font-family: "Edu NSW ACT Cursive", cursive; */
+   font-family: "Dancing Script";
+   font-size: 5.5em;
+   margin: 0;
+   color: #74370d;
+   font-synthesis: none;
 }
 
 #nav-button-container {
@@ -32,7 +39,7 @@
 }
 
 #nav-buttons a {
-    color: black;
+    color: #74370d;
     text-decoration: none;
     position: relative;
     padding-bottom: 4px;
@@ -46,7 +53,7 @@
     bottom: 0;
     width: 0;
     height: 3px;
-    background: black;
+    background: #74370d;
     transition: width 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
@@ -56,9 +63,9 @@
 }
 
 #navbar-line{
-    border: 1px black solid;
-    height: 1px;
-    background-color: black;
+    border: 1px #74370d solid;
+    height: 3px;
+    background-color: yellow;
     width: 65%;
     margin-left: 1%; 
 
