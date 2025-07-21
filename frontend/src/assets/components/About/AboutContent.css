@@ -28,11 +28,18 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: black;
+  background-color: 	#74370d;
+  border: 3px solid 	#d0b339;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0; /* Override the button padding */
+  padding: 0;
+  transition: border-color 0.2s;
+  box-shadow: 0 0 0 2px #74370d, 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.about-content__arrow-btn:hover {
+  border-color: yellow;
 }
 
 .about-content__arrow-btn img {

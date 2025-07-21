@@ -49,14 +49,18 @@ button {
 }
 
 button:hover {
-      border-color: yellow;
-  }
-  button:focus,
-  button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
+ border-color: yellow;
+ transform: scale(1.05);
+ box-shadow: 0 0 0 2px #74370d, 0 4px 15px rgba(255, 255, 0, 0.3), 0 2px 8px rgba(0,0,0,0.08);
+}
 
-  .social-icons {
+button:focus,
+button:focus-visible {
+ outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+.social-icons {
   display: flex;
   justify-content: center;
   gap: 1.2rem;
