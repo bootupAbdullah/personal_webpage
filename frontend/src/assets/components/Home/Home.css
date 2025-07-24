@@ -15,8 +15,12 @@
 }
 
 .profile-image {
-  border: 3px solid yellow;
+  border: 1px solid #74370d;
   box-shadow: 0 0 0 2px #74370d;
+}
+
+.profile-image:hover{
+  border: 2px solid yellow;
 }
 
 #home-image-src {
@@ -34,7 +38,7 @@
 
 
 button {
-  border-radius: 999px;         
+  border-radius: 99px;         
   padding: 1em 2.5em;          
   font-size: 1.1em;            
   font-weight: 500;
@@ -45,14 +49,13 @@ button {
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
   margin: 0.2em 0;
-  -webkit-text-stroke: 0.4px yellow;
+  /* -webkit-text-stroke: 0.4px yellow; */
 
 }
 
 button:hover {
  border-color: yellow;
  transform: scale(1.05);
- box-shadow: 0 0 0 2px #74370d, 0 4px 15px rgba(255, 255, 0, 0.3), 0 2px 8px rgba(0,0,0,0.08);
 }
 
 button:focus,

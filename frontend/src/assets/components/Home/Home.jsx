@@ -8,7 +8,7 @@ const Home = ({ setPage }) => {
         <a href="https://www.linkedin.com/in/abdullah-durrani" target="_blank" rel="noopener noreferrer">
           <img className='profile-image'
             id="home-image-src"
-            src="/images/profile_pic.jpg"
+            src="/images/profile_pic.webp"
             alt="Home"
             style={{ cursor: 'pointer' }}
           />
