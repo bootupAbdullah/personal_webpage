@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+
+
 .navbar {
     display: flex;
     justify-content: space-around;
@@ -8,11 +14,14 @@
 }
 
 #site-title {
-    /* font-family: "Bubblegum Sans", sans-serif; */
+  
+    font-family: "Dancing Script";
     font-size: 5.5em;
+    font-weight: 400;
     margin: 0;
-    color:black;
+    color:#2c5aa0;
     font-synthesis: none;
+    text-decoration: none;
 }
 
 #nav-button-container {
@@ -29,10 +38,11 @@
     list-style-type: none;
     font-size: 1.3em;
     font-family: "Merriweather", serif;
+    -webkit-text-stroke: 0.3px white;
 }
 
 #nav-buttons a {
-    color: black;
+    color: #74370d;
     text-decoration: none;
     position: relative;
     padding-bottom: 4px;
@@ -44,9 +54,9 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 0;
-    height: 3px;
-    background: black;
+    width: 0px;
+    height: 2px;
+    background: #74370d;
     transition: width 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
@@ -56,10 +66,10 @@
 }
 
 #navbar-line{
-    border: 1px black solid;
-    height: 1px;
-    background-color: black;
     width: 65%;
+    height: 3px;
+    background-color:#74370d;
+    /* background-color: #bae1ff; */
     margin-left: 1%; 
 
 }
