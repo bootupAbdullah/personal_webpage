@@ -15,8 +15,7 @@
 }
 
 .profile-image {
-  border: 1px solid #74370d;
-  box-shadow: 0 0 0 2px #74370d;
+  border: 2px solid #74370d;
 }
 
 .profile-image:hover{
