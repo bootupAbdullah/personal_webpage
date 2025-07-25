@@ -7,7 +7,7 @@
  padding: 2rem;
  margin: 0 auto;
  font-family: "Roboto", sans-serif;
- color: #333;
+ color: #333333
 }
 
 .contact-title {
@@ -64,4 +64,44 @@
 
 .contact-text {
  font-size: 1rem;
+}
+
+
+
+@media (max-width: 768px) {
+  .contact-page {
+    gap: 1rem;
+  }
+  
+  .contact-title {
+    font-size: 2rem;
+  }
+  
+  .contact-description {
+    font-size: 1.2rem;
+    max-width: 100%;
+  }
+  
+  .contact-item {
+    gap: 0.8rem;
+    margin: 0.8rem 0;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contact-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact-title {
+    font-size: 2.2rem;
+  }
+  
+  .contact-item {
+    flex-direction: row;
+    text-align: left;
+  }
 }
