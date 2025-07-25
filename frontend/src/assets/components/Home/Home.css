@@ -1,38 +1,39 @@
 
 .home-container-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8rem;
-    height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  height: 70vh;
 }
 
 #home-image-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
     
 }
 
 .profile-image {
-  border: 2px solid #74370d;
+  border: 3px solid #ccd5ae;
 }
 
 .profile-image:hover{
-  border: 2px solid yellow;
+  border-color: #d4a373;
+  transform: scale(1.02); 
 }
 
 #home-image-src {
-    width: 300px;
+  width: 300px;
 }
 
 .home-application-buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-left: 10px;
-    gap: 3rem
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 10px;
+  gap: 3rem
 }
 
 
@@ -42,18 +43,18 @@ button {
   font-size: 1.1em;            
   font-weight: 500;
   font-family: "Merriweather", serif;
-  background-color: #d0b339;
-  border: 3px solid #74370d;
-  color: 74370d;
+  background-color: #d4a373;
+  color: #ffffff;
+  border: 3px solid #ccd5ae;
+  box-shadow: 0 0 0 2px #e9edc9, 0 2px 8px rgba(0,0,0,0.1);
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
   margin: 0.2em 0;
-  /* -webkit-text-stroke: 0.4px yellow; */
-
 }
 
 button:hover {
- border-color: yellow;
+ background-color: #c19a5a; 
+ border-color: #b8c898; 
  transform: scale(1.05);
 }
 
@@ -89,4 +90,39 @@ button:focus-visible {
 .social-icons-fill:hover {
   filter: invert(0.5) sepia(1) hue-rotate(200deg) saturate(5);
   transform: scale(1.1);
+}
+
+
+@media (max-width: 768px) {
+  .home-container-div {
+    flex-direction: column;
+    gap: 3rem;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+  
+  #home-image-src {
+    width: 250px; /* smaller on mobile */
+  }
+  
+  button {
+    font-size: 1rem;
+    padding: 0.8em 2em;
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home-container-div {
+    gap: 5rem;
+  }
+  
+  #home-image-src {
+    width: 280px;
+  }
+  
+  button {
+    font-size: 1.05rem;
+    padding: 0.9em 2.2em;
+  }
 }
