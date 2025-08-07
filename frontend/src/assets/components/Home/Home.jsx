@@ -12,13 +12,13 @@ const Home = ({ setPage }) => {
         />
         <div className="social-icons">
           <a
-            href="https://x.com/Abdullahkd36"
+            href="https://www.linkedin.com/in/abdullah-durrani"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img className='social-icons-fill'
-              src="images/svg/twitter-svgrepo-com.svg"
-              alt="Twitter"
+              src="images/svg/linkedin-svgrepo-com.svg" 
+              alt="LinkedIn"
             />
           </a>
           <a
@@ -32,16 +32,6 @@ const Home = ({ setPage }) => {
             />
           </a>
           <a
-            href="https://www.linkedin.com/in/abdullah-durrani"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img className='social-icons-fill'
-              src="images/svg/linkedin-svgrepo-com.svg" 
-              alt="LinkedIn"
-            />
-          </a>
-          <a
             href="https://bsky.app/profile/layinthegrass.bsky.social"
             target="_blank"
             rel="noopener noreferrer"
@@ -49,6 +39,16 @@ const Home = ({ setPage }) => {
             <img className='social-icon-basic'
               src="images/svg/bluesky_media_kit_logo_1.svg"
               alt="Bluesky"
+            />
+          </a>
+          <a
+            href="https://x.com/Abdullahkd36"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img className='social-icons-fill'
+              src="images/svg/twitter-svgrepo-com.svg"
+              alt="Twitter"
             />
           </a>
         </div>
