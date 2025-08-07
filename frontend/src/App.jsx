@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './assets/components/Home/Home';
 import Nav from './assets/components/Nav/Nav';
@@ -7,10 +8,16 @@ import About from './assets/components/About/About';
 import Contact from './assets/components/Contact/Contact';
 
 const App = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
-    <main className='main-component'>
+    <main className={`main-component ${isDarkMode ? 'dark-theme' : 'light-theme'}`}>
       <div id='navbar-component'>
-        <Nav />
+        <Nav isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -23,5 +30,3 @@ const App = () => {
 };
 
 export default App;
-
-
