@@ -53,11 +53,18 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: none;
+  background-color: #d4a373;
+  border: 3px solid #d0b339;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
+  transition: border-color 0.2s;
+  box-shadow: 0 0 0 2px #74370d, 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.experience__back-btn:hover {
+  border-color: #c19a5a;
 }
 
 .experience__back-icon {
@@ -84,4 +91,49 @@
 .experience__download-btn img {
   width: 24px;
   height: 24px;
+}
+
+
+@media (max-width: 768px) {
+  .experience {
+    width: 95%;
+    gap: 1.5em;
+    padding: 1rem;
+  }
+  
+  .experience__title {
+    font-size: 1.5em;
+  }
+  
+  .experience__company-name {
+    font-size: 1rem;
+  }
+  
+  .experience__job-title {
+    font-size: 0.9rem;
+  }
+  
+  .experience__job-description {
+    font-size: 0.9rem;
+  }
+  
+  .experience__back-btn {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .experience__back-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .experience {
+    width: 85%;
+  }
+  
+  .experience__title {
+    font-size: 1.8em;
+  }
 }
