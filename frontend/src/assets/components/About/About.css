@@ -6,7 +6,7 @@
   gap: 1.5rem;
   padding: 2rem;
   margin: 0 auto;
-  color: #333;
+  color: #333333;
   /* border: 1px solid black; */
   text-align: center;
   height: 70vh; 
@@ -19,3 +19,21 @@
 }
 
 
+@media (max-width: 768px) {
+  .about-page{
+    height: auto;
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-page {
+    padding: 1.5rem;
+    gap: 1.2rem;
+    height: 75vh; /* slightly taller than mobile but less than desktop */
+  }
+  
+  .about-page h1 {
+    font-size: 1.8rem; /* scale between mobile and desktop */
+  }
+}

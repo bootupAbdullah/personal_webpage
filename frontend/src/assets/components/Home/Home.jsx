@@ -4,12 +4,15 @@ import './Home.css';
 const Home = ({ setPage }) => {
   return (
     <div className='home-container-div'>
-      <div id='home-image-div'>
-        <img className='profile-image'
-          id="home-image-src"
-          src="/images/profile_pic.jpg"
-          alt="Home"
-        />
+     <div id='home-image-div'>
+        <a href="https://www.linkedin.com/in/abdullah-durrani" target="_blank" rel="noopener noreferrer">
+          <img className='profile-image'
+            id="home-image-src"
+            src="/images/profile_pic.webp"
+            alt="Home"
+            style={{ cursor: 'pointer' }}
+          />
+        </a>
         <div className="social-icons">
           <a
             href="https://www.linkedin.com/in/abdullah-durrani"

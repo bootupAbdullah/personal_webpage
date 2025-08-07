@@ -4,8 +4,11 @@ body {
     width: 100vw;
     height: 100vh;
     font-family: "Merriweather", serif;
-   
+    background-color: #ffffff;
+    /* background-color: 	#ffffba */
 }
+
+
 
 .main-component {
     min-height: 100vh;
