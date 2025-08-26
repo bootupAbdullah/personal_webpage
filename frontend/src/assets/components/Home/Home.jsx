@@ -15,13 +15,13 @@ const Home = ({ setPage }) => {
         </a>
         <div className="social-icons">
           <a
-            href="https://x.com/Abdullahkd36"
+            href="https://www.linkedin.com/in/abdullah-durrani"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img className='social-icons-fill'
-              src="images/svg/twitter-svgrepo-com.svg"
-              alt="Twitter"
+              src="images/svg/linkedin-svgrepo-com.svg" 
+              alt="LinkedIn"
             />
           </a>
           <a
@@ -35,16 +35,6 @@ const Home = ({ setPage }) => {
             />
           </a>
           <a
-            href="https://www.linkedin.com/in/abdullah-durrani"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img className='social-icons-fill'
-              src="images/svg/linkedin-svgrepo-com.svg" 
-              alt="LinkedIn"
-            />
-          </a>
-          <a
             href="https://bsky.app/profile/layinthegrass.bsky.social"
             target="_blank"
             rel="noopener noreferrer"
@@ -54,10 +44,30 @@ const Home = ({ setPage }) => {
               alt="Bluesky"
             />
           </a>
+          <a
+            href="https://x.com/Abdullahkd36"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img className='social-icons-fill'
+              src="images/svg/twitter-svgrepo-com.svg"
+              alt="Twitter"
+            />
+          </a>
         </div>
       </div>
 
       <div className='home-application-buttons'>
+        <button onClick={() =>
+            window.open(
+              'https://application-tracker-dash.netlify.app/',
+              '_blank',
+              'noopener,noreferrer'
+            )
+          }
+          >
+          Application Tracker
+        </button>
         <button
           onClick={() =>
             window.open(
@@ -79,16 +89,6 @@ const Home = ({ setPage }) => {
           }
         >
           Movie Watchlist App
-        </button>
-        <button onClick={() =>
-            window.open(
-              'https://application-tracker-dash.netlify.app/',
-              '_blank',
-              'noopener,noreferrer'
-            )
-          }
-          >
-          Application Tracker
         </button>
       </div>
     </div>
