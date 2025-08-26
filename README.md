@@ -48,12 +48,6 @@
 - ✅ Clean CSS optimization
 
 <details>
-<summary>📸 View Current Build</summary>
-
-![Current Portfolio Build](images/webpage_snapshot_june_14th_2025.png)
-</details>
-
-<details>
 <summary>🔧 Technical Implementation Details</summary>
 
 **Layout Architecture:**
