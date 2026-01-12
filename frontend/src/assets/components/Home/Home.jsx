@@ -1,62 +1,23 @@
-import React from 'react';
 import './Home.css';
 
 const Home = ({ setPage }) => {
   return (
-    <div className='home-container-div'>
-     <div id='home-image-div'>
+    <div className='home-container-div-1'>
+     <h1 className='profile-name'>Abdullah Durrani</h1>
+     <div className='hero-image-text'>
+      <div id='profile-image-div'>
         <a href="https://www.linkedin.com/in/abdullah-durrani" target="_blank" rel="noopener noreferrer">
           <img className='profile-image'
-            id="home-image-src"
-            src="/images/profile_pic.webp"
+            id="profile-image-src"
+            src="/images/portfolio_pic_2.webp"
             alt="Home"
             style={{ cursor: 'pointer' }}
           />
         </a>
-        <div className="social-icons">
-          <a
-            href="https://www.linkedin.com/in/abdullah-durrani"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img className='social-icons-fill'
-              src="images/svg/linkedin-svgrepo-com.svg" 
-              alt="LinkedIn"
-            />
-          </a>
-          <a
-            href="https://github.com/bootupAbdullah"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img className='social-icon-basic'
-              src="images/svg/github-142-svgrepo-com.svg"
-              alt="GitHub"
-            />
-          </a>
-          <a
-            href="https://bsky.app/profile/layinthegrass.bsky.social"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img className='social-icon-basic'
-              src="images/svg/bluesky_media_kit_logo_1.svg"
-              alt="Bluesky"
-            />
-          </a>
-          <a
-            href="https://x.com/Abdullahkd36"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img className='social-icons-fill'
-              src="images/svg/twitter-svgrepo-com.svg"
-              alt="Twitter"
-            />
-          </a>
-        </div>
       </div>
-
+     </div>
+    
+    <div className='home-container-div-2'>
       <div className='home-application-buttons'>
         <button onClick={() =>
             window.open(
@@ -92,7 +53,9 @@ const Home = ({ setPage }) => {
         </button>
       </div>
     </div>
-  );
+  
+  </div>
+);
 };
 
 export default Home;

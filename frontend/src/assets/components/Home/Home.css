@@ -1,31 +1,48 @@
 
-.home-container-div {
+.home-container-div-1 {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   gap: 8rem;
-  height: 70vh;
+  height: 100vh;
+  border: solid, 1px, yellow;
 }
 
-#home-image-div {
+.profile-name {
+  font-size: 80px;
+  color: 	#f7f0ff;
+}
+
+
+/* #profile-image-div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 80%;
+  border: 2px solid red;
     
-}
+} */
 
 .profile-image {
-  border: 3px solid #ccd5ae;
+  /* competing with #profile-image-src (border setting) */
+  border: 2px solid #febe00
+
 }
 
-.profile-image:hover{
+#profile-image-src {
+  height: 300px;
+  width: 300px;
+  /* border: 2px solid black; */
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 3%;
+}
+
+/* .profile-image:hover{
   border-color: #d4a373;
   transform: scale(1.02); 
-}
-
-#home-image-src {
-  width: 300px;
-}
+} */
 
 .home-application-buttons {
   display: flex;
@@ -94,7 +111,7 @@ button:focus-visible {
 
 
 @media (max-width: 768px) {
-  .home-container-div {
+  .home-container-div-1 {
     flex-direction: column;
     gap: 3rem;
     height: auto;
@@ -113,7 +130,7 @@ button:focus-visible {
 
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  .home-container-div {
+  .home-container-div-1 {
     gap: 5rem;
   }
   

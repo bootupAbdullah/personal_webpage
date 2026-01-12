@@ -1,4 +1,3 @@
-import React from 'react';
 import './AboutContent.css';
 
 const AboutContent = ({ onToggle }) => (

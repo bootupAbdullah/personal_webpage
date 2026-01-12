@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 
+/* Intrusment Serif */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
+
 body {
     width: 100vw;
     height: 100vh;
-    font-family: "Merriweather", serif;
-    background-color: #ffffff;
+    font-family: "Instrument Serif", serif;
+    background-color: 	#03002e;
     /* background-color: 	#ffffba */
 }
-
-
 
 .main-component {
     min-height: 100vh;

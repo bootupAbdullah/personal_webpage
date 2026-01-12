@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 
+/* Dancing Script */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 
+/* Intrusment Serif */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
 
 .navbar {
     display: flex;
@@ -14,11 +17,12 @@
 
 #site-title {
   
-    font-family: "Dancing Script";
+    font-family: "Instrument Serif";
     font-size: 5.5em;
     font-weight: 400;
     margin: 0;
-    color: #d4a373;
+    /* color: #d4a373; */
+    color: 			#f7f0ff;
     font-synthesis: none;
     text-decoration: none;
 }
@@ -37,11 +41,10 @@
     list-style-type: none;
     font-size: 1.3em;
     font-family: "Merriweather", serif;
-    -webkit-text-stroke: 0.3px white;
 }
 
 #nav-buttons a {
-    color: #333333;;
+    color: 	#f7f0ff;
     text-decoration: none;
     position: relative;
     padding-bottom: 4px;
@@ -64,14 +67,14 @@
     width: 100%;
 }
 
-#navbar-line{
+/* #navbar-line{
     width: 65%;
     height: 3px;
     background-color: #d4a373;
     border: 1px solid #d4a373;
     margin-left: 1%; 
 
-}
+} */
 
 
 /* Mobile styles (base - already exists) */

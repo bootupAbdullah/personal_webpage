@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AboutContent from './AboutContent';
 import Experience from './Experience';
 import './About.css';
