@@ -51,6 +51,28 @@
     transition: color 0.2s;
 }
 
+.nav-buttons {
+background: #7C7C7C;
+	border-bottom: 6px inset rgba(0,0,0,.5);
+	border-left: 6px inset rgba(0,0,0,.5);
+	border-right: 6px inset rgba(255,255,255,.5);
+	border-top: 6px inset rgba(255,255,255,.5);
+	box-sizing: border-box;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 2.2rem;
+	margin: 1rem;
+	min-width: 200px;
+	padding: .5rem;
+	text-transform: uppercase;
+	width: auto;
+}
+
+
+
+
+
 #nav-buttons a::after {
     content: '';
     position: absolute;
