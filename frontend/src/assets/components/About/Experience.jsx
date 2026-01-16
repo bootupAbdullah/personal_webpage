@@ -22,8 +22,8 @@ const Experience = ({ onToggle }) => (
         
         <div className="experience__job">
           <h4 className="experience__company-name">JOVESEC, Remote</h4>
-          <p className="experience__job-title">Software Engineer Intern | August 2025 - Present</p>
-          <p className="experience__job-description">Working on backend and full-stack development projects using Node.js, PostgreSQL, Prisma, Express.js, and React. Building scalable REST APIs and database solutions while gaining experience in collaborative, remote development workflows.</p>
+          <p className="experience__job-title">Software Engineer | August 2025 - October 2025</p>
+          <p className="experience__job-description">Contributed to production codebase implementing real-time notification systems and security validation features using React, Node.js, and TDD methodologies. Developed full-stack components analyzing React routing architecture and implementing detection logic for database monitoring in Agile environment.</p>
         </div>
         
         <div className="experience__job">
