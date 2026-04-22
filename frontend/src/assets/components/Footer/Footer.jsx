@@ -1,9 +1,8 @@
 import React from 'react';
-import './Footer.css';
 
 const Footer = () => (
-  <footer className="footer">
-    <p>© {new Date().getFullYear()} akddev.co &mdash; All rights reserved.</p>
+  <footer className="text-center py-5 font-['Merriweather'] text-xs text-[#aaaaaa] border-t border-[#e9edc9] mt-auto">
+    <p className="m-0">© {new Date().getFullYear()} akddev.co &mdash; All rights reserved.</p>
   </footer>
 );
 

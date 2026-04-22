@@ -5,23 +5,23 @@ import Nav from './assets/components/Nav/Nav';
 import Footer from './assets/components/Footer/Footer';
 import About from './assets/components/About/About';
 import Contact from './assets/components/Contact/Contact';
+import Blog from './assets/components/Blog/Blog';
 
 const App = () => {
   return (
-    <main className='main-component'>
-      <div id='navbar-component'>
+    <main className="min-h-screen flex flex-col justify-between font-['Merriweather'] bg-white">
+      <div>
         <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+        </Routes>
       </div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
       <Footer />
     </main>
   );
 };
 
 export default App;
-
-
