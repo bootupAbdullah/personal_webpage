@@ -35,38 +35,38 @@ const Experience = ({ onToggle }) => (
   <div className="flex flex-col items-center max-w-xl mx-auto px-8 py-14">
     <div className="flex items-center justify-between w-full mb-8">
       <div>
-        <p className="font-['Merriweather'] text-xs uppercase tracking-widest text-[#aaaaaa] m-0 mb-1">Work</p>
-        <h2 className="font-['Merriweather'] text-2xl font-bold text-[#2d2d2d] m-0">Experience</h2>
+        <p className="font-['Merriweather'] text-xs uppercase tracking-widest text-[#aaaaaa] dark:text-[#666666] m-0 mb-1">Work</p>
+        <h2 className="font-['Merriweather'] text-2xl font-bold text-[#2d2d2d] dark:text-[#e8e8e8] m-0">Experience</h2>
       </div>
       <a
         href="/documents/Resume.pdf"
         download="Abdullah_Durrani_Resume.pdf"
-        className="flex items-center gap-2 font-['Merriweather'] text-xs text-[#d4a373] border border-[#d4a373] rounded-full px-4 py-2 no-underline transition-all duration-200 hover:bg-[#d4a373] hover:text-white"
+        className="flex items-center gap-2 font-['Merriweather'] text-xs text-[var(--theme-accent)] border border-[var(--theme-accent)] rounded-full px-4 py-2 no-underline transition-all duration-200 hover:bg-[var(--theme-accent)] hover:text-white"
         title="Download Resume"
       >
-        <img src="images/svg/download-svgrepo-com.svg" alt="" className="w-3.5 h-3.5" />
+        <img src="images/svg/download-svgrepo-com.svg" alt="" className="w-3.5 h-3.5 dark:invert" />
         Resume
       </a>
     </div>
 
     <div className="w-full space-y-7">
       {jobs.map((job) => (
-        <div key={job.company} className="relative pl-5 border-l-2 border-[#e9edc9] hover:border-[#d4a373] transition-colors duration-300">
+        <div key={job.company} className="relative pl-5 border-l-2 border-[#e9edc9] dark:border-[#333333] go:border-[#2A4A5E] hover:border-[var(--theme-accent)] transition-colors duration-300">
           <div className="flex items-baseline justify-between mb-0.5">
-            <h4 className="font-['Merriweather'] font-bold text-sm text-[#2d2d2d] m-0">
+            <h4 className="font-['Merriweather'] font-bold text-sm text-[#2d2d2d] dark:text-[#e8e8e8] m-0">
               {job.company}{job.location ? `, ${job.location}` : ''}
             </h4>
-            <span className="font-['Merriweather'] text-xs text-[#aaaaaa] ml-4 shrink-0">{job.period}</span>
+            <span className="font-['Merriweather'] text-xs text-[#aaaaaa] dark:text-[#666666] ml-4 shrink-0">{job.period}</span>
           </div>
-          <p className="font-['Merriweather'] text-xs text-[#d4a373] m-0 mb-2">{job.title}</p>
-          <p className="font-['Merriweather'] text-xs text-[#666666] leading-relaxed m-0">{job.description}</p>
+          <p className="font-['Merriweather'] text-xs text-[var(--theme-accent)] m-0 mb-2">{job.title}</p>
+          <p className="font-['Merriweather'] text-xs text-[#666666] dark:text-[#a0a0a0] leading-relaxed m-0">{job.description}</p>
         </div>
       ))}
     </div>
 
     <button
       onClick={onToggle}
-      className="mt-10 flex items-center gap-2 bg-transparent border-none cursor-pointer font-['Merriweather'] text-xs text-[#d4a373] uppercase tracking-widest hover:gap-3 transition-all duration-200"
+      className="mt-10 flex items-center gap-2 bg-transparent border-none cursor-pointer font-['Merriweather'] text-xs text-[var(--theme-accent)] uppercase tracking-widest hover:gap-3 transition-all duration-200"
     >
       <span>←</span> Back
     </button>

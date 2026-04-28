@@ -1,8 +1,29 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *, .go, .go *));
+@variant go (&:where(.go, .go *));
+
+:root {
+  --theme-accent: #d4a373;
+  --theme-accent-hover: #c19a5a;
+}
+
+.go {
+  --theme-accent: #00AED8;
+  --theme-accent-hover: #007D9C;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
   background-color: #faf8f5;
+}
+
+.dark body {
+  background-color: #111111;
+}
+
+.go body {
+  background-color: #0F1F2E;
 }
