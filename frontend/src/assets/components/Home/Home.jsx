@@ -52,9 +52,9 @@ const Home = () => {
 
         <div className="flex gap-4">
           <SocialIcon href="https://www.linkedin.com/in/abdullah-durrani" src="images/svg/linkedin-svgrepo-com.svg" alt="LinkedIn" />
-          <SocialIcon href="https://github.com/bootupAbdullah" src="images/svg/github-142-svgrepo-com.svg" alt="GitHub" />
+          <SocialIcon href="https://github.com/bootupAbdullah" src="images/svg/github-142-svgrepo-com.svg" alt="GitHub" invert />
           <SocialIcon href="https://bsky.app/profile/layinthegrass.bsky.social" src="images/svg/bluesky_media_kit_logo_1.svg" alt="Bluesky" />
-          <SocialIcon href="https://x.com/Abdullahkd36" src="images/svg/twitter-svgrepo-com.svg" alt="Twitter" />
+          <SocialIcon href="https://x.com/Abdullahkd36" src="images/svg/twitter-svgrepo-com.svg" alt="Twitter" invert />
         </div>
 
         <Link
@@ -76,9 +76,9 @@ const Home = () => {
   );
 };
 
-const SocialIcon = ({ href, src, alt }) => (
+const SocialIcon = ({ href, src, alt, invert = false }) => (
   <a href={href} target="_blank" rel="noopener noreferrer">
-    <img src={src} alt={alt} className="w-6 h-6 opacity-60 hover:opacity-100 transition-opacity duration-200 hover:scale-110 dark:invert" />
+    <img src={src} alt={alt} className={`w-6 h-6 opacity-60 hover:opacity-100 transition-opacity duration-200 hover:scale-110 ${invert ? 'dark:invert' : ''}`} />
   </a>
 );
 

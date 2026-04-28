@@ -19,7 +19,7 @@ const Contact = () => (
           abdullah-durrani
         </a>
       </ContactItem>
-      <ContactItem icon="images/svg/github-142-svgrepo-com.svg" alt="GitHub" label="GitHub">
+      <ContactItem icon="images/svg/github-142-svgrepo-com.svg" alt="GitHub" label="GitHub" invert>
         <a href="https://github.com/bootupAbdullah" target="_blank" rel="noopener noreferrer" className="text-[var(--theme-accent)] no-underline hover:text-[var(--theme-accent-hover)] transition-colors duration-200">
           bootupAbdullah
         </a>
@@ -28,9 +28,9 @@ const Contact = () => (
   </div>
 );
 
-const ContactItem = ({ icon, alt, label, children }) => (
+const ContactItem = ({ icon, alt, label, children, invert = false }) => (
   <div className="flex items-center gap-4 bg-white dark:bg-[#1e1e1e] go:bg-[#1A2D3E] border border-[#e9edc9] dark:border-[#333333] go:border-[#2A4A5E] rounded-lg px-5 py-4 shadow-sm">
-    <img src={icon} alt={alt} className="w-6 h-6 shrink-0 opacity-60 dark:invert" />
+    <img src={icon} alt={alt} className={`w-6 h-6 shrink-0 opacity-60 ${invert ? 'dark:invert' : ''}`} />
     <span className="font-['Merriweather'] text-sm text-[#555555] dark:text-[#b0b0b0]">
       <span className="font-bold text-[#333333] dark:text-[#dddddd]">{label}:</span>{' '}{children}
     </span>
