@@ -14,7 +14,7 @@ const Nav = () => {
 
         <div className="flex items-center gap-4">
           {/* Desktop links */}
-          <ul className="hidden md:flex flex-row gap-8 list-none m-0 p-0 font-['Merriweather'] text-sm font-normal">
+          <ul className="hidden md:flex flex-row gap-8 list-none m-0 p-0 font-['Merriweather'] text-base font-medium">
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/about">About</NavLink></li>
             <li><NavLink to="/contact">Contact</NavLink></li>
@@ -74,7 +74,7 @@ const NavLink = ({ to, children, onClick }) => {
       onClick={onClick}
       className={`no-underline relative pb-1 transition-colors duration-200
         after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px]
-        after:bg-[var(--theme-accent)] after:transition-all after:duration-300
+        after:bg-[var(--theme-accent)] after:transition-all after:duration-300 after:h-[3px]
         ${isActive
           ? 'text-[var(--theme-accent)] font-semibold after:w-full'
           : 'text-[#444444] dark:text-[#cccccc] after:w-0 hover:text-[var(--theme-accent)] hover:after:w-full'

@@ -34,11 +34,11 @@ const Home = () => {
           className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover object-top border-2 border-[#ccd5ae] dark:border-[#3a3a3a] go:border-[#2A4A5E] shadow-md transition-all duration-200 hover:border-[var(--theme-accent)] hover:shadow-lg"
         />
         <div>
-          <h1 className="font-['Merriweather'] text-2xl font-bold text-[#2d2d2d] dark:text-[#e8e8e8] m-0 leading-tight">Abdullah Durrani</h1>
-          <p className="font-['Merriweather'] text-sm text-[var(--theme-accent)] m-0 mt-1">Software Engineer</p>
+          <h1 className="font-['Merriweather'] text-4xl font-bold text-[#2d2d2d] dark:text-[#e8e8e8] m-0 leading-tight">Abdullah Durrani</h1>
+          <p className="font-['Merriweather'] text-base text-[var(--theme-accent)] m-0 mt-1">Software Engineer</p>
         </div>
 
-        <p className="font-['Merriweather'] text-sm text-[#666666] dark:text-[#a0a0a0] leading-relaxed max-w-xs">
+        <p className="font-['Merriweather'] text-base text-[#666666] dark:text-[#a0a0a0] leading-relaxed max-w-xs">
           Building things for the web. Focused on backend, cloud, and DevOps. I love{' '}
           <span
             onClick={activateGoTheme}
@@ -90,10 +90,10 @@ const ProjectCard = ({ title, description, href }) => (
     className="group block bg-white dark:bg-[#1e1e1e] go:bg-[#1A2D3E] border border-[#e9edc9] dark:border-[#333333] go:border-[#2A4A5E] rounded-lg px-5 py-4 no-underline shadow-sm transition-all duration-200 hover:shadow-md hover:border-[var(--theme-accent)] hover:-translate-y-0.5"
   >
     <div className="flex justify-between items-start">
-      <h3 className="font-['Merriweather'] text-sm font-bold text-[#333333] dark:text-[#dddddd] m-0 mb-1">{title}</h3>
+      <h3 className="font-['Merriweather'] text-base font-bold text-[#333333] dark:text-[#dddddd] m-0 mb-1">{title}</h3>
       <span className="text-[var(--theme-accent)] text-sm ml-2 transition-transform duration-200 group-hover:translate-x-1">→</span>
     </div>
-    <p className="font-['Merriweather'] text-xs text-[#777777] dark:text-[#909090] m-0 leading-relaxed">{description}</p>
+    <p className="font-['Merriweather'] text-sm text-[#777777] dark:text-[#909090] m-0 leading-relaxed">{description}</p>
   </a>
 );
 
