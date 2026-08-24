@@ -12,7 +12,7 @@ const Post = () => {
     return (
       <div className="flex flex-col items-center justify-center min-h-[75vh]">
         <p className="font-['Merriweather'] text-sm text-[#777777]">Post not found.</p>
-        <Link to="/blog" className="font-['Merriweather'] text-xs text-[#d4a373] mt-4">← Back to Blog</Link>
+        <Link to="/blog" className="font-['Merriweather'] text-xs text-[#c07830] mt-4">← Back to Blog</Link>
       </div>
     );
   }
@@ -21,7 +21,7 @@ const Post = () => {
 
   return (
     <article className="mx-auto w-full max-w-2xl px-6 py-16">
-      <Link to="/blog" className="font-['Merriweather'] text-xs text-[#d4a373] no-underline hover:text-[#c19a5a] transition-colors duration-200">
+      <Link to="/blog" className="font-['Merriweather'] text-xs text-[#c07830] no-underline hover:text-[#c19a5a] transition-colors duration-200">
         ← Back to Blog
       </Link>
 
@@ -33,7 +33,7 @@ const Post = () => {
         <p className="font-['Merriweather'] text-xs text-[#aaaaaa] m-0 mb-3">{meta.date}</p>
         <h1 className="font-['Merriweather'] text-3xl font-bold text-[#2d2d2d] m-0 mb-3 leading-snug">{meta.title}</h1>
         <p className="font-['Merriweather'] text-base text-[#777777] m-0 leading-relaxed">{meta.subtitle}</p>
-        <div className="h-[2px] bg-gradient-to-r from-[#d4a373] via-[#ccd5ae] to-transparent mt-8" />
+        <div className="h-[2px] bg-gradient-to-r from-[#c07830] via-[#ccd5ae] to-transparent mt-8" />
       </header>
 
       <div className="prose-blog">

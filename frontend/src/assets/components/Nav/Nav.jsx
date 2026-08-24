@@ -6,15 +6,15 @@ const Nav = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header>
-      <nav className="flex justify-between items-center px-8 py-3 md:px-16">
+    <header className="sticky top-0 z-50 bg-[#faf8f5]/90 dark:bg-[#111111]/90 go:bg-[#0F1F2E]/90 backdrop-blur-sm border-b border-[#e0d5c5] dark:border-[#2a2a2a] go:border-[#1a3548]">
+      <nav className="flex justify-between items-center px-8 py-5 md:px-16">
         <Link to="/" className="font-['Dancing_Script'] text-5xl font-normal text-[var(--theme-accent)] no-underline leading-none">
           akddev.co
         </Link>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-6">
           {/* Desktop links */}
-          <ul className="hidden md:flex flex-row gap-8 list-none m-0 p-0 font-['Merriweather'] text-base font-medium">
+          <ul className="hidden md:flex flex-row gap-10 list-none m-0 p-0 font-['Merriweather'] text-lg font-semibold">
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/about">About</NavLink></li>
             <li><NavLink to="/contact">Contact</NavLink></li>
@@ -38,7 +38,7 @@ const Nav = () => {
 
       {/* Mobile dropdown */}
       {open && (
-        <ul className="md:hidden flex flex-col items-center gap-5 list-none m-0 py-5 px-0 border-t border-[#e9edc9] dark:border-[#333333] go:border-[#2A4A5E] bg-[#faf8f5] dark:bg-[#111111] go:bg-[#0F1F2E] font-['Merriweather'] text-sm">
+        <ul className="md:hidden flex flex-col items-center gap-5 list-none m-0 py-6 px-0 border-t border-[#e0d5c5] dark:border-[#333333] go:border-[#2A4A5E] bg-[#faf8f5] dark:bg-[#111111] go:bg-[#0F1F2E] font-['Merriweather'] text-lg font-semibold">
           <li><NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink></li>
           <li><NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink></li>
           <li><NavLink to="/contact" onClick={() => setOpen(false)}>Contact</NavLink></li>
@@ -46,7 +46,6 @@ const Nav = () => {
         </ul>
       )}
 
-      <div className="h-[2px] bg-gradient-to-r from-[var(--theme-accent)] via-[#ccd5ae] go:via-[#007D9C] to-transparent mx-8 md:mx-16" />
     </header>
   );
 };
@@ -76,7 +75,7 @@ const NavLink = ({ to, children, onClick }) => {
         after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px]
         after:bg-[var(--theme-accent)] after:transition-all after:duration-300 after:h-[3px]
         ${isActive
-          ? 'text-[var(--theme-accent)] font-semibold after:w-full'
+          ? 'text-[var(--theme-accent)] after:w-full'
           : 'text-[#444444] dark:text-[#cccccc] after:w-0 hover:text-[var(--theme-accent)] hover:after:w-full'
         }`}
     >

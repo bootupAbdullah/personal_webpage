@@ -4,8 +4,8 @@
 @variant go (&:where(.go, .go *));
 
 :root {
-  --theme-accent: #d4a373;
-  --theme-accent-hover: #c19a5a;
+  --theme-accent: #c07830;
+  --theme-accent-hover: #9a5a1f;
 }
 
 .go {
@@ -75,12 +75,12 @@ body {
 }
 
 .prose-blog a {
-  color: #d4a373;
+  color: #c07830;
   text-decoration: underline;
 }
 
 .prose-blog blockquote {
-  border-left: 3px solid #d4a373;
+  border-left: 3px solid #c07830;
   margin: 1.5rem 0;
   padding: 0.5rem 0 0.5rem 1.25rem;
   color: #666666;
