@@ -25,12 +25,33 @@ const Post = () => {
         ← Back to Blog
       </Link>
 
-      {meta.image && (
-        <img src={meta.image} alt={meta.title} className="w-full rounded-lg mt-8 mb-6 object-cover max-h-72" />
+      {meta.heroImage && (
+        <img src={meta.heroImage} alt={meta.title} className="w-full rounded-lg mt-8 mb-6 object-cover max-h-72" />
       )}
 
       <header className="mt-8 mb-10">
-        <p className="font-['Merriweather'] text-xs text-[#aaaaaa] m-0 mb-3">{meta.date}</p>
+        <div className="flex items-center gap-4 mb-3">
+          <p className="font-['Merriweather'] text-xs text-[#aaaaaa] m-0">{meta.date}</p>
+          {meta.links && (
+            <div className="flex items-center gap-3">
+              {meta.links.github && (
+                <a href={meta.links.github} target="_blank" rel="noopener noreferrer">
+                  <img src="/images/svg/github-142-svgrepo-com.svg" alt="GitHub" className="w-4 h-4 opacity-40 hover:opacity-100 transition-opacity duration-200" />
+                </a>
+              )}
+              {meta.links.linkedin && (
+                <a href={meta.links.linkedin} target="_blank" rel="noopener noreferrer">
+                  <img src="/images/svg/linkedin-svgrepo-com.svg" alt="LinkedIn" className="w-4 h-4 opacity-40 hover:opacity-100 transition-opacity duration-200" />
+                </a>
+              )}
+              {meta.links.bluesky && (
+                <a href={meta.links.bluesky} target="_blank" rel="noopener noreferrer">
+                  <img src="/images/svg/bluesky_media_kit_logo_1.svg" alt="Bluesky" className="w-4 h-4 opacity-40 hover:opacity-100 transition-opacity duration-200" />
+                </a>
+              )}
+            </div>
+          )}
+        </div>
         <h1 className="font-['Merriweather'] text-3xl font-bold text-[#2d2d2d] m-0 mb-3 leading-snug">{meta.title}</h1>
         <p className="font-['Merriweather'] text-base text-[#777777] m-0 leading-relaxed">{meta.subtitle}</p>
         <div className="h-[2px] bg-gradient-to-r from-[#c07830] via-[#ccd5ae] to-transparent mt-8" />

@@ -1,36 +1,43 @@
 import { Link } from 'react-router-dom';
 import { posts } from '../../../posts/index';
 
-const Blog = () => (
-  <div className="flex flex-col items-center px-6 py-16 min-h-[75vh]">
-    <h1 className="font-['Merriweather'] text-3xl font-bold text-[#2d2d2d] m-0 mb-12">Blog</h1>
+const Blog = () => {
+  const [featured, ...rest] = posts;
 
-    <div className="flex flex-col gap-6 w-full max-w-2xl">
-      {posts.map((post) => (
-        <PostCard key={post.slug} {...post} />
-      ))}
+  return (
+    <div className="px-8 md:px-16 py-10 min-h-[75vh]">
+    <div className="w-full border border-[#e0d5c5] rounded-2xl px-8 md:px-12 py-12 shadow-sm">
+      <div className="flex items-baseline gap-3 mb-10">
+        <h1 className="font-['Merriweather'] text-3xl font-bold text-[#2d2d2d] m-0">Blog</h1>
+        <span className="font-['Merriweather'] font-bold text-2xl text-[var(--theme-accent)]">/</span>
+        <span className="font-['Merriweather'] font-bold text-2xl text-[#e0a060]">/</span>
+        <span className="font-['Merriweather'] font-bold text-2xl text-[#eac99a]">/</span>
+      </div>
+
+      <div className="flex flex-col gap-5 w-[90%]">
+        {posts.map((post) => (
+          <PostCard key={post.slug} {...post} />
+        ))}
+      </div>
     </div>
-  </div>
-);
+    </div>
+  );
+};
+
 
 const PostCard = ({ slug, title, subtitle, date, image }) => (
   <Link
     to={`/blog/${slug}`}
-    className="group flex flex-col sm:flex-row gap-5 bg-white border border-[#e9edc9] rounded-lg overflow-hidden shadow-sm no-underline transition-all duration-200 hover:shadow-md hover:border-[#c07830] hover:-translate-y-0.5"
+    className="group flex flex-row bg-white border-2 border-[#e0d5c5] rounded-xl overflow-hidden shadow-sm no-underline transition-all duration-200 hover:shadow-md hover:border-[var(--theme-accent)] hover:-translate-y-0.5"
   >
     {image && (
-      <img
-        src={image}
-        alt={title}
-        className="w-full sm:w-48 h-40 sm:h-auto object-cover shrink-0"
-      />
+      <img src={image} alt={title} className="w-56 h-40 object-cover object-top shrink-0" />
     )}
-    <div className="flex flex-col justify-center gap-2 px-5 py-5 sm:pl-0">
+    <div className="flex flex-col justify-center gap-2 px-8 py-6">
       <p className="font-['Merriweather'] text-xs text-[#aaaaaa] m-0">{date}</p>
-      <h2 className="font-['Merriweather'] text-lg font-bold text-[#2d2d2d] m-0 group-hover:text-[#c07830] transition-colors duration-200">
-        {title}
-      </h2>
-      <p className="font-['Merriweather'] text-base text-[#777777] m-0 leading-relaxed">{subtitle}</p>
+      <h2 className="font-['Merriweather'] text-xl font-bold text-[#2d2d2d] m-0 group-hover:text-[var(--theme-accent)] transition-colors duration-200">{title}</h2>
+      <p className="font-['Merriweather'] text-sm text-[#777777] m-0 leading-relaxed">{subtitle}</p>
+      <p className="font-['Merriweather'] text-sm text-[var(--theme-accent)] m-0 mt-2 font-semibold">Read more →</p>
     </div>
   </Link>
 );

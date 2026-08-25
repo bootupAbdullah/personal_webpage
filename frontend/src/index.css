@@ -95,3 +95,10 @@ body {
 .prose-blog li {
   margin-bottom: 0.4rem;
 }
+
+.prose-blog img {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  border: 1px solid #e0d5c5;
+}
