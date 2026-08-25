@@ -6,6 +6,7 @@ import Footer from './assets/components/Footer/Footer';
 import About from './assets/components/About/About';
 import Contact from './assets/components/Contact/Contact';
 import Blog from './assets/components/Blog/Blog';
+import Post from './assets/components/Blog/Post';
 import { ThemeProvider } from './context/ThemeContext';
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<Post />} />
           </Routes>
         </div>
         <Footer />

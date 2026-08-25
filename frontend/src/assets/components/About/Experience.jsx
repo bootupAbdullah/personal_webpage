@@ -36,7 +36,7 @@ const Experience = ({ onToggle }) => (
     <div className="flex items-center justify-between w-full mb-8">
       <div>
         <p className="font-['Merriweather'] text-xs uppercase tracking-widest text-[#aaaaaa] dark:text-[#666666] m-0 mb-1">Work</p>
-        <h2 className="font-['Merriweather'] text-2xl font-bold text-[#2d2d2d] dark:text-[#e8e8e8] m-0">Experience</h2>
+        <h2 className="font-['Merriweather'] text-3xl font-bold text-[#2d2d2d] dark:text-[#e8e8e8] m-0">Experience</h2>
       </div>
       <a
         href="/documents/Resume.pdf"
@@ -53,13 +53,13 @@ const Experience = ({ onToggle }) => (
       {jobs.map((job) => (
         <div key={job.company} className="relative pl-5 border-l-2 border-[#e9edc9] dark:border-[#333333] go:border-[#2A4A5E] hover:border-[var(--theme-accent)] transition-colors duration-300">
           <div className="flex items-baseline justify-between mb-0.5">
-            <h4 className="font-['Merriweather'] font-bold text-sm text-[#2d2d2d] dark:text-[#e8e8e8] m-0">
+            <h4 className="font-['Merriweather'] font-bold text-base text-[#2d2d2d] dark:text-[#e8e8e8] m-0">
               {job.company}{job.location ? `, ${job.location}` : ''}
             </h4>
             <span className="font-['Merriweather'] text-xs text-[#aaaaaa] dark:text-[#666666] ml-4 shrink-0">{job.period}</span>
           </div>
           <p className="font-['Merriweather'] text-xs text-[var(--theme-accent)] m-0 mb-2">{job.title}</p>
-          <p className="font-['Merriweather'] text-xs text-[#666666] dark:text-[#a0a0a0] leading-relaxed m-0">{job.description}</p>
+          <p className="font-['Merriweather'] text-sm text-[#666666] dark:text-[#a0a0a0] leading-relaxed m-0">{job.description}</p>
         </div>
       ))}
     </div>

@@ -4,8 +4,8 @@
 @variant go (&:where(.go, .go *));
 
 :root {
-  --theme-accent: #d4a373;
-  --theme-accent-hover: #c19a5a;
+  --theme-accent: #c07830;
+  --theme-accent-hover: #9a5a1f;
 }
 
 .go {
@@ -26,4 +26,79 @@ body {
 
 .go body {
   background-color: #0F1F2E;
+}
+
+.prose-blog {
+  font-family: 'Merriweather', serif;
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: #444444;
+}
+
+.prose-blog p {
+  margin: 0 0 1.5rem 0;
+}
+
+.prose-blog h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin: 2.5rem 0 1rem 0;
+}
+
+.prose-blog h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin: 2rem 0 0.75rem 0;
+}
+
+.prose-blog pre {
+  background: #f5f2ed;
+  border: 1px solid #e9edc9;
+  border-radius: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.prose-blog code {
+  font-size: 0.85rem;
+  background: #f5f2ed;
+  border-radius: 0.25rem;
+  padding: 0.1rem 0.35rem;
+}
+
+.prose-blog pre code {
+  background: none;
+  padding: 0;
+}
+
+.prose-blog a {
+  color: #c07830;
+  text-decoration: underline;
+}
+
+.prose-blog blockquote {
+  border-left: 3px solid #c07830;
+  margin: 1.5rem 0;
+  padding: 0.5rem 0 0.5rem 1.25rem;
+  color: #666666;
+  font-style: italic;
+}
+
+.prose-blog ul, .prose-blog ol {
+  padding-left: 1.5rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.prose-blog li {
+  margin-bottom: 0.4rem;
+}
+
+.prose-blog img {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  border: 1px solid #e0d5c5;
 }

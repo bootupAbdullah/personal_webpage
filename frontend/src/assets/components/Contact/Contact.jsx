@@ -3,8 +3,8 @@ import React from 'react';
 const Contact = () => (
   <div className="flex flex-col items-center justify-center py-16 px-8 min-h-[75vh]">
     <p className="font-['Merriweather'] text-xs uppercase tracking-widest text-[#aaaaaa] dark:text-[#666666] m-0 mb-4">Say Hello</p>
-    <h1 className="font-['Merriweather'] text-2xl font-bold text-[#2d2d2d] dark:text-[#e8e8e8] m-0 mb-3">Get In Touch</h1>
-    <p className="font-['Merriweather'] text-sm text-[#777777] dark:text-[#909090] mb-12 text-center max-w-sm leading-relaxed">
+    <h1 className="font-['Merriweather'] text-3xl font-bold text-[#2d2d2d] dark:text-[#e8e8e8] m-0 mb-3">Get In Touch</h1>
+    <p className="font-['Merriweather'] text-base text-[#777777] dark:text-[#909090] mb-12 text-center max-w-sm leading-relaxed">
       I'm actively seeking software development opportunities and would love to connect.
     </p>
 
@@ -31,7 +31,7 @@ const Contact = () => (
 const ContactItem = ({ icon, alt, label, children, invert = false }) => (
   <div className="flex items-center gap-4 bg-white dark:bg-[#1e1e1e] go:bg-[#1A2D3E] border border-[#e9edc9] dark:border-[#333333] go:border-[#2A4A5E] rounded-lg px-5 py-4 shadow-sm">
     <img src={icon} alt={alt} className={`w-6 h-6 shrink-0 opacity-60 ${invert ? 'dark:invert' : ''}`} />
-    <span className="font-['Merriweather'] text-sm text-[#555555] dark:text-[#b0b0b0]">
+    <span className="font-['Merriweather'] text-base text-[#555555] dark:text-[#b0b0b0]">
       <span className="font-bold text-[#333333] dark:text-[#dddddd]">{label}:</span>{' '}{children}
     </span>
   </div>

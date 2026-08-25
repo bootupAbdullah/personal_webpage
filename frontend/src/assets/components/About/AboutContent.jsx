@@ -3,9 +3,9 @@ import React from 'react';
 const AboutContent = ({ onToggle }) => (
   <div className="flex flex-col items-center max-w-xl mx-auto px-8 py-14">
     <p className="font-['Merriweather'] text-xs uppercase tracking-widest text-[#aaaaaa] dark:text-[#666666] m-0 mb-4">About Me</p>
-    <h1 className="font-['Merriweather'] text-2xl font-bold text-[#2d2d2d] dark:text-[#e8e8e8] m-0 mb-8">Hello! 👋</h1>
+    <h1 className="font-['Merriweather'] text-3xl font-bold text-[#2d2d2d] dark:text-[#e8e8e8] m-0 mb-8">Hello! 👋</h1>
 
-    <div className="font-['Merriweather'] text-sm text-[#555555] dark:text-[#b0b0b0] leading-loose space-y-4 text-left">
+    <div className="font-['Merriweather'] text-base text-[#555555] dark:text-[#b0b0b0] leading-loose space-y-4 text-left">
       <p>I'm a software engineer who discovered programming while working in tax preparation. What started as evening and weekend learning became a passion I couldn't ignore.</p>
       <p>After nearly two years of self-study, I took a leap and completed General Assembly's intensive software engineering program. I built full-stack applications exploring everything from API integrations to user authentication, always focused on solving real problems.</p>
       <p>Currently working as a Service Desk Analyst at IMB (International Mission Board), where I apply my technical background to systems troubleshooting, infrastructure support, and process improvement. My focus has shifted toward backend development, Go, cloud infrastructure, and DevOps — building on the systems thinking I use every day.</p>

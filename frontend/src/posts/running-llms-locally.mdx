@@ -1,0 +1,27 @@
+My Linux server is now running LLMs locally. This past Saturday I spent a few hours throwing different models at it, comparing GPU vs CPU usage, watching inference behavior, and starting to get a feel for how each model handles the hardware constraints I'm working within.
+
+The setup has 4GB of VRAM. That ceiling ends up being the single most important number in all of this.
+
+## The Experiment
+
+I ran eight models across two weight classes, small (under 3B parameters, fitting entirely in VRAM) and larger (7B-9B, which spill over into CPU/RAM). For each one I tracked average response time and counted errors or accuracy gaps across a consistent set of prompts.
+
+Here's what the data showed:
+
+![Local inference benchmark, 8 models, one 4GB VRAM ceiling](/images/llm-benchmark-post-v6.png)
+
+The pattern makes sense once you see it laid out. The smaller models sit entirely inside the 4GB VRAM ceiling and run inference at full GPU speed. The larger ones spill over, and anything that lands on CPU/RAM drags response times up significantly.
+
+## What Stood Out
+
+Qwen2.5 is doing something the other models aren't.
+
+At the 3B size, it posted the fastest response time of the small models, 3.99 seconds, with zero errors. The other models in that weight class were either slower or making things up. At 7B, it held a 6.24s average despite having 41% of its compute offloaded to CPU. That's faster than several of the smaller models running entirely on GPU.
+
+Defying the speed curve at both ends of the size range, while holding accuracy, is genuinely impressive.
+
+## Where This Goes Next
+
+The immediate goal is tuning runtime parameters, specifically how inference gets split between GPU and CPU, to see how much of that performance gap can be closed. The question is whether adjusting layer offloading can push more of the larger models' compute back onto VRAM without hitting memory limits.
+
+More to follow.
