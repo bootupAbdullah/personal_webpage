@@ -1,0 +1,69 @@
+My coworkers are gamers, and listening to them talk about it for months got me thinking about playing again, something I used to do a lot and had mostly let go of. New consoles are expensive enough that buying one felt hard to justify, so I started thinking about emulators instead, just enough to scratch the itch.
+
+Then it occurred to me I already had [a server sitting around](/blog/running-llms-locally) that could probably handle more than LLM inference. If it could run an emulator and the actual game, all the compute would live there instead of on my Mac, and I'd just be playing a stream of it. On top of getting to play again, I'd get to learn something about streaming in the process.
+
+Turned out yes, I could do that. Turned out also not easy. I didn't expect to spend weeks testing different configurations, debugging, and learning some genuinely obscure, low level stuff along the way, like standing up a virtual display and getting a framebuffer allocated for a machine that was never meant to have a monitor attached.
+
+## The GPU, and the driver running it
+
+Digging into the machine, I found an NVIDIA Quadro P600, a GPU I'd been using for local LLM inference but hadn't touched for anything graphical. Pascal generation, 4GB of VRAM, running NVIDIA's Legacy 580.x driver branch, the last branch this GPU generation will ever receive a full feature update on. Security patches continue for a while longer, but no new capability after this.
+
+That driver generation ends up mattering a lot later. It's directly responsible for the bug that derailed the first stretch of this project.
+
+## It kind of worked…??
+
+Looking into it, the first approach I found was an old trick people use: tell Xorg a monitor is connected when it isn't. Set `ConnectedMonitor` to a fake port, hand it a synthetic EDID file, a small blob of fabricated monitor capability data, and the NVIDIA driver treats the fiction as real.
+
+It worked. Xorg started clean every time, no errors, a proper virtual display ready to draw into.
+
+Then I tried to shut it down.
+
+Killing Xorg didn't work. `kill -9` didn't work. Rebooting didn't work. Every time, the entire machine, not just the display, locked up completely and needed a hard power cycle to recover. Three different ways to end the session, one identical failure.
+
+## Chasing the bug
+
+Figuring out what was actually stuck turned into its own project. Normal tools couldn't even attach to the frozen process to look at it, which was the first clue this wasn't a normal hang. Checking the process status showed a kill signal had been sent but was still marked pending, never delivered. That meant the process was stuck somewhere deeper, inside the kernel itself, the core part of the operating system that talks directly to hardware, in a state that specifically can't be interrupted while it's in the middle of talking to a device.
+
+The kernel error itself only ever showed up on the physical screen, and the machine was too locked up to retrieve logs any other way, so I ended up photographing a monitor to read it:
+
+```
+nvidia: [drm] *ERROR* Disabling all crtc's during unload failed with -22
+```
+
+`-22` is Linux's shorthand for an invalid argument. The driver was trying to turn off the display's internal hardware paths as part of shutting down, and it was rejecting its own request. Digging further traced it to one specific spot inside NVIDIA's own driver code, the closed-source part, stuck there and not moving. I checked twice, a few seconds apart, and it hadn't changed at all.
+
+I couldn't fix this from `xorg.conf`. It came down to a bug in that Legacy 580.x driver branch itself, the newest one this GPU will ever receive, and it showed up specifically because of the fake-monitor setup, something a real, physically-connected display doesn't trigger the same way.
+
+## The pivot
+
+At some point I stopped trying to patch around it. I posted about it on r/linuxquestions, laid out what I'd tried, and got told pretty directly that the `ConnectedMonitor` approach was just a bad hack and not worth continuing to fight. That's what pointed me toward Wayland.
+
+Wayland handles this differently. Compositors like KDE's KWin have a real, officially supported way to create a headless virtual display, an actual supported feature, not a workaround. Rather than build that from scratch, I found [Sunveil](https://github.com/ImStillBlue/sunshine-virtual-display), a public project by ImStillBlue that had already solved this exact problem, an on-demand virtual display for Sunshine, on hardware and software close to mine. I read through its scripts in full before adapting them. `krfb-virtualmonitor` and `kscreen-doctor` turned out to be doing the actual work, not the KWin-only approach I'd originally assumed.
+
+## Building the stack
+
+With the display problem solved, the rest of the chain is straightforward on paper: RetroArch renders the game into the virtual display, PipeWire captures the frames, Sunshine encodes and streams them, Moonlight decodes them on the receiving end and sends input back.
+
+None of it came together on the first try.
+
+I assumed starting a graphical session over a plain SSH connection would just work, the same way running most other commands does. It didn't. SSH hands you a shell, but no display context, no session manager, none of the scaffolding a desktop environment expects to already exist. The fix, a specific `systemd-run` invocation that builds a proper login session before starting Plasma inside it, came from a forum thread describing the exact same setup, including a second-order problem someone else had already hit and fixed one layer up.
+
+PipeWire had its own gap too. The KDE packages that depend on it were installed, but the actual PipeWire service itself wasn't, and nothing pointed that out directly until Sunshine tried to use it and just failed.
+
+The GPU had one more limit. Its hardware video encoder only supports an older API version than what Sunshine needs, and there's no driver that supports both this GPU and a newer version. So encoding runs on the CPU instead, using about one of six cores during actual gameplay, which the machine handles fine.
+
+Getting RetroArch running was simpler than I expected, once I found the missing piece. Ubuntu's RetroArch package comes with the emulator itself, but it deliberately leaves out the in-app downloader most people use to grab emulator cores, so the SNES core had to be installed as its own separate package. Once that was in place, the first ROM I tried loaded to a black screen, which turned out to be a quirk of that one file, not a real problem. A second one ran cleanly. I stuck to freely available homebrew games for all of this, not copyrighted ROMs.
+
+## First successful stream
+
+The first time it all worked end to end was worth the time it took to get there. RetroArch rendering into a virtual display nobody could see directly, PipeWire handing those frames to Sunshine, Sunshine encoding them in software and sending them out over a private VPN connection, Moonlight decoding them on the other end with working video, audio, and input, all at once.
+
+A real game, running on a machine with no monitor ever attached, played live from somewhere else entirely. That was the goal from the start, and it took a completely different architecture than the one I began with to actually get there.
+
+![First successful stream, RetroArch running live over the network](/images/posts/headless-linux-game-streaming/first-test-stream-game.png)
+
+## Where it goes next
+
+The pipeline works end to end now, but it still has a manual step: starting the Plasma session requires an interactive password prompt every time, which means it can't currently be triggered by a single unattended command. The next piece of work is closing that gap, likely with `systemd --user` services and autologin at boot, so bringing the whole stack up stops requiring a password prompt in the loop.
+
+The full writeup, including the kernel-level diagnosis, the complete stack breakdown, the session-startup deep dive, and the actual scripts, is on [GitHub](https://github.com/bootupAbdullah/headless-linux-game-streaming).
