@@ -7,6 +7,7 @@ import About from './assets/components/About/About';
 import Contact from './assets/components/Contact/Contact';
 import Blog from './assets/components/Blog/Blog';
 import Post from './assets/components/Blog/Post';
+import Flow from './assets/components/Flow/Flow';
 import { ThemeProvider } from './context/ThemeContext';
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<Post />} />
+            <Route path="/flow/:slug" element={<Flow />} />
           </Routes>
         </div>
         <Footer />

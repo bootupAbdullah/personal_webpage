@@ -32,19 +32,24 @@ const Post = () => {
       <header className="mt-8 mb-10">
         <div className="flex items-center gap-4 mb-3">
           <p className="font-['Merriweather'] text-xs text-[#aaaaaa] m-0">{meta.date}</p>
-          {meta.links && (
+          {(meta.flow || meta.links) && (
             <div className="flex items-center gap-3">
-              {meta.links.github && (
+              {meta.flow && (
+                <Link to={`/flow/${meta.slug}`} title="Interactive flow chart">
+                  <img src="/images/svg/flow-chart.svg" alt="Flow chart" className="w-4 h-4 opacity-40 hover:opacity-100 transition-opacity duration-200" />
+                </Link>
+              )}
+              {meta.links?.github && (
                 <a href={meta.links.github} target="_blank" rel="noopener noreferrer">
                   <img src="/images/svg/github-142-svgrepo-com.svg" alt="GitHub" className="w-4 h-4 opacity-40 hover:opacity-100 transition-opacity duration-200" />
                 </a>
               )}
-              {meta.links.linkedin && (
+              {meta.links?.linkedin && (
                 <a href={meta.links.linkedin} target="_blank" rel="noopener noreferrer">
                   <img src="/images/svg/linkedin-svgrepo-com.svg" alt="LinkedIn" className="w-4 h-4 opacity-40 hover:opacity-100 transition-opacity duration-200" />
                 </a>
               )}
-              {meta.links.bluesky && (
+              {meta.links?.bluesky && (
                 <a href={meta.links.bluesky} target="_blank" rel="noopener noreferrer">
                   <img src="/images/svg/bluesky_media_kit_logo_1.svg" alt="Bluesky" className="w-4 h-4 opacity-40 hover:opacity-100 transition-opacity duration-200" />
                 </a>
