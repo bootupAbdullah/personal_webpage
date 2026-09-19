@@ -10,9 +10,9 @@ const Post = () => {
 
   if (!meta || !mod) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[75vh]">
-        <p className="font-['Merriweather'] text-sm text-[#777777]">Post not found.</p>
-        <Link to="/blog" className="font-['Merriweather'] text-xs text-[#c07830] mt-4">← Back to Blog</Link>
+      <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4">
+        <p className="text-sm text-[var(--theme-text-secondary)]">Post not found.</p>
+        <Link to="/blog" className="font-['JetBrains_Mono'] text-xs text-[var(--theme-accent)] no-underline">← back to blog</Link>
       </div>
     );
   }
@@ -20,52 +20,61 @@ const Post = () => {
   const Content = mod.default;
 
   return (
-    <article className="mx-auto w-full max-w-2xl px-6 py-16">
-      <Link to="/blog" className="font-['Merriweather'] text-xs text-[#c07830] no-underline hover:text-[#c19a5a] transition-colors duration-200">
-        ← Back to Blog
-      </Link>
+    <div className="flex justify-center px-5 md:px-16 py-6 md:py-14">
+      <article className="w-full max-w-[760px] flex flex-col">
 
-      {meta.heroImage && (
-        <img src={meta.heroImage} alt={meta.title} className="w-full rounded-lg mt-8 mb-6 object-cover max-h-72" />
-      )}
+        <Link
+          to="/blog"
+          className="inline-flex items-center w-fit font-['JetBrains_Mono'] text-[11px] md:text-xs font-semibold text-[var(--theme-accent-on)] bg-[var(--theme-accent)] rounded-full py-1.5 px-3.5 md:py-2 md:px-4 no-underline"
+        >
+          ← back to blog
+        </Link>
 
-      <header className="mt-8 mb-10">
-        <div className="flex items-center gap-4 mb-3">
-          <p className="font-['Merriweather'] text-xs text-[#aaaaaa] m-0">{meta.date}</p>
-          {(meta.flow || meta.links) && (
-            <div className="flex items-center gap-3">
-              {meta.flow && (
-                <Link to={`/flow/${meta.slug}`} title="Interactive flow chart">
-                  <img src="/images/svg/flow-chart.svg" alt="Flow chart" className="w-4 h-4 opacity-40 hover:opacity-100 transition-opacity duration-200" />
-                </Link>
-              )}
-              {meta.links?.github && (
-                <a href={meta.links.github} target="_blank" rel="noopener noreferrer">
-                  <img src="/images/svg/github-142-svgrepo-com.svg" alt="GitHub" className="w-4 h-4 opacity-40 hover:opacity-100 transition-opacity duration-200" />
-                </a>
-              )}
-              {meta.links?.linkedin && (
-                <a href={meta.links.linkedin} target="_blank" rel="noopener noreferrer">
-                  <img src="/images/svg/linkedin-svgrepo-com.svg" alt="LinkedIn" className="w-4 h-4 opacity-40 hover:opacity-100 transition-opacity duration-200" />
-                </a>
-              )}
-              {meta.links?.bluesky && (
-                <a href={meta.links.bluesky} target="_blank" rel="noopener noreferrer">
-                  <img src="/images/svg/bluesky_media_kit_logo_1.svg" alt="Bluesky" className="w-4 h-4 opacity-40 hover:opacity-100 transition-opacity duration-200" />
-                </a>
-              )}
-            </div>
+        {meta.heroImage && (
+          <img
+            src={meta.heroImage}
+            alt={meta.title}
+            className="w-full h-[190px] md:h-[320px] object-cover rounded-[10px] border border-[var(--theme-border)] mt-4.5 md:mt-6"
+          />
+        )}
+
+        <div className="flex items-center gap-3.5 md:gap-5 flex-wrap mt-4.5 md:mt-6">
+          <span className="font-['JetBrains_Mono'] text-[11px] md:text-xs text-[var(--theme-text-muted)]">{meta.date}</span>
+          {meta.flow && (
+            <Link to={`/flow/${meta.slug}`} className="font-['JetBrains_Mono'] text-[11px] md:text-xs text-[var(--theme-accent)] no-underline">
+              → flow chart
+            </Link>
+          )}
+          {meta.links?.github && (
+            <a href={meta.links.github} target="_blank" rel="noopener noreferrer" className="font-['JetBrains_Mono'] text-[11px] md:text-xs text-[var(--theme-accent)] no-underline">
+              → github
+            </a>
+          )}
+          {meta.links?.linkedin && (
+            <a href={meta.links.linkedin} target="_blank" rel="noopener noreferrer" className="font-['JetBrains_Mono'] text-[11px] md:text-xs text-[var(--theme-accent)] no-underline">
+              → linkedin
+            </a>
+          )}
+          {meta.links?.bluesky && (
+            <a href={meta.links.bluesky} target="_blank" rel="noopener noreferrer" className="font-['JetBrains_Mono'] text-[11px] md:text-xs text-[var(--theme-accent)] no-underline">
+              → bluesky
+            </a>
           )}
         </div>
-        <h1 className="font-['Merriweather'] text-3xl font-bold text-[#2d2d2d] m-0 mb-3 leading-snug">{meta.title}</h1>
-        <p className="font-['Merriweather'] text-base text-[#777777] m-0 leading-relaxed">{meta.subtitle}</p>
-        <div className="h-[2px] bg-gradient-to-r from-[#c07830] via-[#ccd5ae] to-transparent mt-8" />
-      </header>
 
-      <div className="prose-blog">
-        <Content />
-      </div>
-    </article>
+        <h1 className="m-0 mt-2.5 font-['Space_Grotesk'] font-bold text-2xl md:text-[34px] leading-[1.25] md:leading-[1.2] text-[var(--theme-text-primary)]">{meta.title}</h1>
+        <p className="m-0 mt-2 text-sm md:text-base leading-relaxed text-[var(--theme-text-secondary)]">{meta.subtitle}</p>
+
+        <div
+          className="h-0.5 mt-5 md:mt-7"
+          style={{ background: `linear-gradient(to right, var(--theme-accent), transparent)` }}
+        />
+
+        <div className="prose-blog mt-5 md:mt-8">
+          <Content />
+        </div>
+      </article>
+    </div>
   );
 };
 
