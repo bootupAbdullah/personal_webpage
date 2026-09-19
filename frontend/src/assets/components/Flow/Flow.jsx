@@ -54,8 +54,8 @@ const Flow = () => {
   if (!mod) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[75vh]">
-        <p className="font-['Merriweather'] text-sm text-[#777777]">Flow chart not found.</p>
-        <Link to="/blog" className="font-['Merriweather'] text-xs text-[#c07830] mt-4">← Back to Blog</Link>
+        <p className="text-sm text-[var(--theme-text-secondary)]">Flow chart not found.</p>
+        <Link to="/blog" className="font-['JetBrains_Mono'] text-xs text-[var(--theme-accent)] mt-4">← back to blog</Link>
       </div>
     );
   }
@@ -65,17 +65,17 @@ const Flow = () => {
 
   return (
     <div>
-      <div className="px-8 md:px-16 pt-10 pb-4">
+      <div className="px-5 md:px-16 pt-8 md:pt-10 pb-4">
         <Link
           to={`/blog/${slug}`}
-          className="font-['Merriweather'] text-xs text-[#c07830] no-underline hover:text-[#c19a5a] transition-colors duration-200"
+          className="font-['JetBrains_Mono'] text-xs text-[var(--theme-accent)] no-underline transition-colors duration-200 hover:text-[var(--theme-text-primary)]"
         >
-          ← Back to Post
+          ← back to post
         </Link>
-        <h1 className="font-['Merriweather'] text-2xl font-bold text-[#2d2d2d] dark:text-[#f0f0f0] mt-4 mb-1">
+        <h1 className="font-['Space_Grotesk'] font-bold text-2xl text-[var(--theme-text-primary)] mt-4 mb-1">
           {title}
         </h1>
-        <p className="font-['Merriweather'] text-sm text-[#777777] m-0">
+        <p className="text-sm text-[var(--theme-text-secondary)] m-0">
           Drag to pan, scroll or pinch to zoom.
         </p>
       </div>
@@ -90,9 +90,9 @@ const Flow = () => {
           maxZoom={1.5}
           proOptions={{ hideAttribution: true }}
         >
-          <Background gap={24} color="#e0d5c5" />
+          <Background gap={24} color="#565D68" />
           <Controls showInteractive={false} />
-          <MiniMap pannable zoomable nodeColor="#c07830" maskColor="rgba(250, 248, 245, 0.6)" />
+          <MiniMap pannable zoomable nodeColor="#3DDC97" maskColor="rgba(10, 14, 19, 0.6)" />
         </ReactFlow>
       </div>
     </div>
