@@ -1,45 +1,78 @@
 import { Link } from 'react-router-dom';
 import { posts } from '../../../posts/index';
 
-const Blog = () => {
-  const [featured, ...rest] = posts;
+const linkOrder = [
+  { key: 'flow', label: 'flow chart' },
+  { key: 'github', label: 'github' },
+  { key: 'linkedin', label: 'linkedin' },
+  { key: 'bluesky', label: 'bluesky' },
+];
 
-  return (
-    <div className="px-8 md:px-16 py-10 min-h-[75vh]">
-    <div className="w-full border border-[#e0d5c5] rounded-2xl px-8 md:px-12 py-12 shadow-sm">
-      <div className="flex items-baseline gap-3 mb-10">
-        <h1 className="font-['Merriweather'] text-3xl font-bold text-[#2d2d2d] m-0">Blog</h1>
-        <span className="font-['Merriweather'] font-bold text-2xl text-[var(--theme-accent)]">/</span>
-        <span className="font-['Merriweather'] font-bold text-2xl text-[#e0a060]">/</span>
-        <span className="font-['Merriweather'] font-bold text-2xl text-[#eac99a]">/</span>
+const Blog = () => (
+  <div className="flex justify-center px-5 md:px-16 py-8 md:py-14">
+    <div className="w-full max-w-[760px] flex flex-col gap-5 md:gap-6">
+
+      <div>
+        <div className="font-['JetBrains_Mono'] text-[11px] md:text-xs tracking-[0.1em] text-[var(--theme-text-muted)] mb-2">{'// BLOG'}</div>
+        <h1 className="m-0 font-['Space_Grotesk'] font-bold text-[28px] md:text-4xl text-[var(--theme-text-primary)]">Writing</h1>
       </div>
 
-      <div className="flex flex-col gap-5 w-[90%]">
-        {posts.map((post) => (
-          <PostCard key={post.slug} {...post} />
+      <div className="flex flex-col gap-4 md:gap-[18px]">
+        {posts.map((post, i) => (
+          <PostCard key={post.slug} {...post} featured={i === 0} />
         ))}
       </div>
     </div>
+  </div>
+);
+
+const PostCard = ({ slug, title, subtitle, date, links = {}, flow, featured = false }) => {
+  const activeLinks = linkOrder.filter(({ key }) => (key === 'flow' ? flow : links[key]));
+
+  return (
+    <div
+      className={`rounded-xl bg-[var(--theme-surface)] border px-5 py-4.5 md:px-7 md:py-6 transition-colors duration-200 ${
+        featured ? 'border-[var(--theme-accent)]' : 'border-[var(--theme-border)] hover:border-[var(--theme-accent)]'
+      }`}
+    >
+      <Link to={`/blog/${slug}`} className="no-underline">
+        <div className="flex items-baseline justify-between gap-3">
+          <span className="font-['JetBrains_Mono'] text-[11px] md:text-xs text-[var(--theme-text-muted)]">{slug}.mdx</span>
+          <span className="font-['JetBrains_Mono'] text-[10px] md:text-[11px] text-[var(--theme-text-muted)] whitespace-nowrap">{date}</span>
+        </div>
+        <div className="font-['Space_Grotesk'] font-bold text-lg md:text-[22px] leading-snug text-[var(--theme-text-primary)] mt-2.5">{title}</div>
+        <p className="m-0 mt-2 text-[13px] md:text-sm leading-relaxed text-[var(--theme-text-secondary)] max-w-[620px]">{subtitle}</p>
+      </Link>
+      {activeLinks.length > 0 && (
+        <div className="flex flex-wrap gap-4 md:gap-5 mt-3.5">
+          {activeLinks.map(({ key, label }) => (
+            <PostLink
+              key={key}
+              href={key === 'flow' ? `/flow/${slug}` : links[key]}
+              internal={key === 'flow'}
+              label={label}
+              featured={featured}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
 
+const PostLink = ({ href, internal, label, featured }) => {
+  const className = `font-['JetBrains_Mono'] text-[11px] md:text-xs no-underline transition-colors duration-200 ${
+    featured ? 'text-[var(--theme-accent)]' : 'text-[var(--theme-text-muted)] hover:text-[var(--theme-accent)]'
+  }`;
 
-const PostCard = ({ slug, title, subtitle, date, image }) => (
-  <Link
-    to={`/blog/${slug}`}
-    className="group flex flex-row bg-white border-2 border-[#e0d5c5] rounded-xl overflow-hidden shadow-sm no-underline transition-all duration-200 hover:shadow-md hover:border-[var(--theme-accent)] hover:-translate-y-0.5"
-  >
-    {image && (
-      <img src={image} alt={title} className="w-56 h-40 object-cover object-top shrink-0" />
-    )}
-    <div className="flex flex-col justify-center gap-2 px-8 py-6">
-      <p className="font-['Merriweather'] text-xs text-[#aaaaaa] m-0">{date}</p>
-      <h2 className="font-['Merriweather'] text-xl font-bold text-[#2d2d2d] m-0 group-hover:text-[var(--theme-accent)] transition-colors duration-200">{title}</h2>
-      <p className="font-['Merriweather'] text-sm text-[#777777] m-0 leading-relaxed">{subtitle}</p>
-      <p className="font-['Merriweather'] text-sm text-[var(--theme-accent)] m-0 mt-2 font-semibold">Read more →</p>
-    </div>
-  </Link>
-);
+  if (internal) {
+    return <Link to={href} className={className}>→ {label}</Link>;
+  }
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+      → {label}
+    </a>
+  );
+};
 
 export default Blog;
