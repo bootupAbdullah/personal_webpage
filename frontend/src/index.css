@@ -1,38 +1,45 @@
 @import "tailwindcss";
 
-@variant dark (&:where(.dark, .dark *, .go, .go *));
-@variant go (&:where(.go, .go *));
+@variant dark (&:where(.dark, .dark *));
 
 :root {
-  --theme-accent: #c07830;
-  --theme-accent-hover: #9a5a1f;
+  --theme-bg: #ECE2CE;
+  --theme-surface: #F5EFDE;
+  --theme-surface-topbar: #EFE6CD;
+  --theme-border: #A8C2AD;
+  --theme-accent: #1B8A63;
+  --theme-accent-on: #12251C;
+  --theme-text-primary: #1A140C;
+  --theme-text-secondary: #453A28;
+  --theme-text-muted: #6B5D42;
 }
 
-.go {
-  --theme-accent: #00AED8;
-  --theme-accent-hover: #007D9C;
+.dark {
+  --theme-bg: #0A0E13;
+  --theme-surface: #11151C;
+  --theme-surface-topbar: #161B23;
+  --theme-border: #1E242D;
+  --theme-accent: #3DDC97;
+  --theme-accent-on: #0A0E13;
+  --theme-text-primary: #F3F4F6;
+  --theme-text-secondary: #8A93A0;
+  --theme-text-muted: #6B7280;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #faf8f5;
-}
-
-.dark body {
-  background-color: #111111;
-}
-
-.go body {
-  background-color: #0F1F2E;
+  font-family: 'IBM Plex Sans', sans-serif;
+  background-color: var(--theme-bg);
+  color: var(--theme-text-primary);
 }
 
 .prose-blog {
-  font-family: 'Merriweather', serif;
+  font-family: 'IBM Plex Serif', serif;
   font-size: 0.95rem;
   line-height: 1.9;
-  color: #444444;
+  color: var(--theme-text-secondary);
 }
 
 .prose-blog p {
@@ -40,22 +47,24 @@ body {
 }
 
 .prose-blog h2 {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #2d2d2d;
+  color: var(--theme-text-primary);
   margin: 2.5rem 0 1rem 0;
 }
 
 .prose-blog h3 {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1rem;
   font-weight: 700;
-  color: #2d2d2d;
+  color: var(--theme-text-primary);
   margin: 2rem 0 0.75rem 0;
 }
 
 .prose-blog pre {
-  background: #f5f2ed;
-  border: 1px solid #e9edc9;
+  background: var(--theme-surface);
+  border: 1px solid var(--theme-border);
   border-radius: 0.5rem;
   padding: 1.25rem 1.5rem;
   overflow-x: auto;
@@ -63,8 +72,9 @@ body {
 }
 
 .prose-blog code {
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.85rem;
-  background: #f5f2ed;
+  background: var(--theme-surface);
   border-radius: 0.25rem;
   padding: 0.1rem 0.35rem;
 }
@@ -75,15 +85,15 @@ body {
 }
 
 .prose-blog a {
-  color: #c07830;
+  color: var(--theme-accent);
   text-decoration: underline;
 }
 
 .prose-blog blockquote {
-  border-left: 3px solid #c07830;
+  border-left: 3px solid var(--theme-accent);
   margin: 1.5rem 0;
   padding: 0.5rem 0 0.5rem 1.25rem;
-  color: #666666;
+  color: var(--theme-text-muted);
   font-style: italic;
 }
 
@@ -100,5 +110,5 @@ body {
   width: 100%;
   border-radius: 0.5rem;
   margin: 1.5rem 0;
-  border: 1px solid #e0d5c5;
+  border: 1px solid var(--theme-border);
 }

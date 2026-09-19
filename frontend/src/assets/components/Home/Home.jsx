@@ -1,99 +1,139 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../../../context/ThemeContext';
 
 const projects = [
   {
+    filename: 'application-tracker.ts',
     title: 'Application Tracker',
     description: 'A dashboard to track and manage job applications throughout your search.',
     href: 'https://application-tracker-dash.netlify.app/',
+    featured: true,
   },
   {
+    filename: 'cookie-clicker.js',
     title: 'Cookie Clicker Game',
     description: 'A browser-based idle clicker game built for fun and to sharpen JS fundamentals.',
     href: 'https://bootupabdullah.github.io/portfolio_project_1_cookie_clicker_chronicles/',
   },
   {
+    filename: 'watchlist.py',
     title: 'Movie Watchlist App',
     description: 'Browse, save, and organize movies you want to watch.',
     href: 'https://sprightly-naiad-897bbc.netlify.app',
   },
 ];
 
+const socials = [
+  { label: 'in', href: 'https://www.linkedin.com/in/abdullah-durrani', alt: 'LinkedIn' },
+  { label: 'gh', href: 'https://github.com/bootupAbdullah', alt: 'GitHub' },
+  { label: 'bs', href: 'https://bsky.app/profile/layinthegrass.bsky.social', alt: 'Bluesky' },
+  { label: 'x', href: 'https://x.com/Abdullahkd36', alt: 'Twitter / X' },
+];
+
+const stack = ['Go', 'Python', 'AWS', 'Docker', 'Kubernetes', 'PostgreSQL', 'Terraform'];
+
 const Home = () => {
-  const { activateGoTheme, theme } = useTheme();
-
   return (
-    <div className="flex flex-col md:flex-row justify-center items-center gap-16 md:gap-24 px-8 md:px-16 py-20 min-h-[85vh]">
+    <div className="flex flex-col">
+      {/* HERO */}
+      <div className="flex flex-col md:flex-row md:items-center gap-10 md:gap-14 px-5 md:px-16 py-8 md:py-16">
 
-      {/* Left — hero */}
-      <div className="flex flex-col items-center md:items-start gap-6">
-        <img
-          src="/images/profile_pic.webp"
-          alt="Abdullah Durrani"
-          className="w-52 h-52 md:w-64 md:h-64 rounded-full object-cover object-top border-4 border-[#e0d5c5] dark:border-[#3a3a3a] go:border-[#2A4A5E] shadow-lg transition-all duration-200 hover:border-[var(--theme-accent)] hover:shadow-xl"
-        />
-        <div>
-          <h1 className="font-['Merriweather'] text-5xl font-bold text-[var(--theme-accent)] m-0 leading-tight">Abdullah Durrani</h1>
-          <p className="font-['Merriweather'] text-sm font-semibold text-[#2d2d2d] dark:text-[#e8e8e8] m-0 mt-2 uppercase tracking-[0.2em]">Software Engineer</p>
+        {/* Left column */}
+        <div className="flex-none md:basis-[44%] flex flex-col gap-5">
+          <div className="inline-flex items-center gap-2 py-1.5 px-3 border border-[var(--theme-border)] rounded-full bg-[var(--theme-surface)] w-fit">
+            <span className="w-[7px] h-[7px] rounded-full bg-[var(--theme-accent)]" />
+            <span className="font-['JetBrains_Mono'] text-[10px] md:text-[11px] tracking-[0.12em] text-[var(--theme-text-secondary)]">AVAILABLE FOR WORK</span>
+          </div>
+
+          <h1 className="m-0 font-['Space_Grotesk'] font-bold text-4xl md:text-5xl leading-[1.1] text-[var(--theme-text-primary)]">Abdullah Durrani</h1>
+
+          <p className="m-0 text-sm md:text-base font-medium text-[var(--theme-accent)]">Software Engineer — Backend, Cloud &amp; DevOps</p>
+
+          <p className="m-0 max-w-[420px] text-sm leading-relaxed text-[var(--theme-text-secondary)]">
+            I build and ship backend systems, cloud infrastructure, and the pipelines that hold them together.
+            Currently deep in Go, Kubernetes, and things that run on servers I don't have to think about twice.
+          </p>
+
+          <div className="flex gap-2.5">
+            {socials.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.alt}
+                className="w-[34px] h-[34px] rounded-lg border border-[var(--theme-border)] flex items-center justify-center font-['JetBrains_Mono'] text-xs text-[var(--theme-text-secondary)] transition-colors duration-200 hover:border-[var(--theme-accent)] hover:text-[var(--theme-accent)]"
+              >
+                {s.label}
+              </a>
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 mt-1">
+            <Link
+              to="/about"
+              className="text-center px-6 py-3 rounded-lg bg-[var(--theme-accent)] text-[var(--theme-accent-on)] text-sm font-semibold no-underline transition-transform duration-200 hover:-translate-y-0.5"
+            >
+              About Me →
+            </Link>
+            <Link
+              to="/blog"
+              className="text-center px-6 py-3 rounded-lg border border-[var(--theme-border)] text-[var(--theme-text-primary)] text-sm font-semibold no-underline transition-colors duration-200 hover:border-[var(--theme-accent)]"
+            >
+              View Blog
+            </Link>
+          </div>
         </div>
 
-        <p className="font-['Merriweather'] text-base text-[#555555] dark:text-[#a0a0a0] leading-relaxed max-w-sm">
-          Building things for the web. Focused on backend, cloud, and DevOps. I love{' '}
-          <span
-            onClick={activateGoTheme}
-            className="text-[var(--theme-accent)] cursor-pointer font-semibold hover:underline transition-all duration-200"
-            title={theme === 'go' ? 'Exit Go theme' : 'You know what to do'}
-          >
-            Go
-          </span>
-          .
-        </p>
-
-        <div className="flex gap-5">
-          <SocialIcon href="https://www.linkedin.com/in/abdullah-durrani" src="images/svg/linkedin-svgrepo-com.svg" alt="LinkedIn" />
-          <SocialIcon href="https://github.com/bootupAbdullah" src="images/svg/github-142-svgrepo-com.svg" alt="GitHub" invert />
-          <SocialIcon href="https://bsky.app/profile/layinthegrass.bsky.social" src="images/svg/bluesky_media_kit_logo_1.svg" alt="Bluesky" />
-          <SocialIcon href="https://x.com/Abdullahkd36" src="images/svg/twitter-svgrepo-com.svg" alt="Twitter" invert />
+        {/* Right column: project cards */}
+        <div className="flex-1 flex flex-col gap-3.5">
+          <div className="font-['JetBrains_Mono'] text-xs tracking-[0.1em] text-[var(--theme-text-muted)] mb-0.5">{'// PROJECTS'}</div>
+          {projects.map((p) => (
+            <ProjectCard key={p.filename} {...p} />
+          ))}
         </div>
-
-        <Link
-          to="/about"
-          className="font-['Merriweather'] text-sm font-semibold text-white no-underline uppercase tracking-widest bg-[var(--theme-accent)] px-7 py-3 rounded-full transition-all duration-200 hover:bg-[var(--theme-accent-hover)] hover:shadow-lg hover:-translate-y-0.5"
-        >
-          About Me →
-        </Link>
       </div>
 
-      {/* Right — project cards */}
-      <div className="flex flex-col gap-5 w-full max-w-md">
-        <p className="font-['Merriweather'] text-xs font-bold uppercase tracking-[0.2em] text-[#aaaaaa] dark:text-[#666666] m-0 border-b border-[#e0d5c5] dark:border-[#333333] pb-3">Projects</p>
-        {projects.map((p) => (
-          <ProjectCard key={p.title} {...p} />
-        ))}
+      {/* STACK STRIP */}
+      <div className="flex flex-wrap items-center gap-3 px-5 md:px-16 py-6 border-t border-[var(--theme-border)]">
+        <span className="font-['JetBrains_Mono'] text-[11px] tracking-[0.12em] text-[var(--theme-text-muted)] mr-1">STACK</span>
+        <div className="flex flex-wrap gap-2">
+          {stack.map((s) => (
+            <span
+              key={s}
+              className="font-['JetBrains_Mono'] text-xs text-[var(--theme-text-secondary)] bg-[var(--theme-surface)] border border-[var(--theme-border)] rounded-md py-1.5 px-3"
+            >
+              {s}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
-const SocialIcon = ({ href, src, alt, invert = false }) => (
-  <a href={href} target="_blank" rel="noopener noreferrer">
-    <img src={src} alt={alt} className={`w-8 h-8 opacity-50 hover:opacity-100 transition-all duration-200 hover:scale-110 ${invert ? 'dark:invert' : ''}`} />
-  </a>
-);
-
-const ProjectCard = ({ title, description, href }) => (
+const ProjectCard = ({ filename, title, description, href, featured = false }) => (
   <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="group block bg-white dark:bg-[#1e1e1e] go:bg-[#1A2D3E] border-2 border-[#e0d5c5] dark:border-[#333333] go:border-[#2A4A5E] rounded-lg px-5 py-4 no-underline shadow-md transition-all duration-200 hover:shadow-xl hover:border-[var(--theme-accent)] hover:-translate-y-1"
+    className={`group block rounded-[10px] bg-[var(--theme-surface)] border overflow-hidden no-underline transition-colors duration-200 ${
+      featured ? 'border-[var(--theme-accent)]' : 'border-[var(--theme-border)] hover:border-[var(--theme-accent)]'
+    }`}
   >
-    <div className="flex justify-between items-start">
-      <h3 className="font-['Merriweather'] text-base font-bold text-[#333333] dark:text-[#dddddd] m-0 mb-1">{title}</h3>
-      <span className="text-[var(--theme-accent)] text-sm ml-2 transition-transform duration-200 group-hover:translate-x-1">→</span>
+    <div className="h-[34px] flex items-center gap-2 px-3.5 bg-[var(--theme-surface-topbar)] border-b border-[var(--theme-border)]">
+      <span className="w-[9px] h-[9px] rounded-full bg-[#C9776A] dark:bg-[#8B4A3E]" />
+      <span className="w-[9px] h-[9px] rounded-full bg-[#D9A857] dark:bg-[#A67C3D]" />
+      <span className="w-[9px] h-[9px] rounded-full bg-[#4FA97D] dark:bg-[#3D8B68]" />
+      <span className="font-['JetBrains_Mono'] text-xs text-[var(--theme-text-muted)] ml-1">{filename}</span>
     </div>
-    <p className="font-['Merriweather'] text-sm text-[#777777] dark:text-[#909090] m-0 leading-relaxed">{description}</p>
+    <div className="px-5 py-4 flex flex-col gap-1.5">
+      <div className="font-['Space_Grotesk'] font-bold text-base text-[var(--theme-text-primary)]">{title}</div>
+      <div className="text-[13px] leading-relaxed text-[var(--theme-text-secondary)]">{description}</div>
+      <div className={`font-['JetBrains_Mono'] text-xs mt-1 ${featured ? 'text-[var(--theme-accent)]' : 'text-[var(--theme-text-muted)] group-hover:text-[var(--theme-accent)]'}`}>
+        open →
+      </div>
+    </div>
   </a>
 );
 
