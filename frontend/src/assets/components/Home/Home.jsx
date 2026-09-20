@@ -7,7 +7,6 @@ const projects = [
     title: 'Application Tracker',
     description: 'A dashboard to track and manage job applications throughout your search.',
     href: 'https://application-tracker-dash.netlify.app/',
-    featured: true,
   },
   {
     filename: 'cookie-clicker.js',
@@ -24,55 +23,59 @@ const projects = [
 ];
 
 const socials = [
-  { label: 'in', href: 'https://www.linkedin.com/in/abdullah-durrani', alt: 'LinkedIn' },
-  { label: 'gh', href: 'https://github.com/bootupAbdullah', alt: 'GitHub' },
-  { label: 'bs', href: 'https://bsky.app/profile/layinthegrass.bsky.social', alt: 'Bluesky' },
-  { label: 'x', href: 'https://x.com/Abdullahkd36', alt: 'Twitter / X' },
+  { label: 'in', href: 'https://www.linkedin.com/in/abdullah-durrani', alt: 'LinkedIn', icon: '/images/svg/linkedin-svgrepo-com.svg' },
+  { label: 'gh', href: 'https://github.com/bootupAbdullah', alt: 'GitHub', icon: '/images/svg/github-142-svgrepo-com.svg' },
+  { label: 'bs', href: 'https://bsky.app/profile/layinthegrass.bsky.social', alt: 'Bluesky', icon: '/images/svg/bluesky_media_kit_logo_1.svg' },
 ];
 
 const stack = ['Go', 'Python', 'AWS', 'Docker', 'Kubernetes', 'PostgreSQL', 'Terraform'];
 
 const Home = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col md:min-h-[calc(100vh-136px)]">
       {/* HERO */}
-      <div className="flex flex-col md:flex-row md:items-center gap-10 md:gap-14 px-5 md:px-16 py-8 md:py-16">
+      <div className="md:flex-1 flex flex-col md:flex-row md:items-center gap-10 md:gap-14 px-5 md:px-16 py-8 md:py-16">
 
         {/* Left column */}
-        <div className="flex-none md:basis-[44%] flex flex-col gap-5">
+        <div className="flex-none md:basis-[44%] md:ml-12 flex flex-col gap-5">
           <div className="inline-flex items-center gap-2 py-1.5 px-3 border border-[var(--theme-border)] rounded-full bg-[var(--theme-surface)] w-fit">
-            <span className="w-[7px] h-[7px] rounded-full bg-[var(--theme-accent)]" />
+            <span className="relative flex w-[7px] h-[7px]">
+              <span className="absolute inline-flex w-full h-full rounded-full bg-[var(--theme-accent)] opacity-75 animate-ping" />
+              <span className="relative inline-flex w-[7px] h-[7px] rounded-full bg-[var(--theme-accent)]" />
+            </span>
             <span className="font-['JetBrains_Mono'] text-[10px] md:text-[11px] tracking-[0.12em] text-[var(--theme-text-secondary)]">AVAILABLE FOR WORK</span>
           </div>
 
-          <h1 className="m-0 font-['Space_Grotesk'] font-bold text-4xl md:text-5xl leading-[1.1] text-[var(--theme-text-primary)]">Abdullah Durrani</h1>
+          <h1 className="m-0 font-['Space_Grotesk'] font-bold text-4xl md:text-[54px] leading-[1.1] md:leading-[1.08] text-[var(--theme-text-primary)]">Abdullah Durrani</h1>
 
           <p className="m-0 text-sm md:text-base font-medium text-[var(--theme-accent)]">Software Engineer — Backend, Cloud &amp; DevOps</p>
 
-          <p className="m-0 max-w-[420px] text-sm leading-relaxed text-[var(--theme-text-secondary)]">
+          <p className="m-0 max-w-[420px] text-base leading-relaxed text-[var(--theme-text-secondary)]">
             I build and ship backend systems, cloud infrastructure, and the pipelines that hold them together.
             Currently deep in Go, Kubernetes, and things that run on servers I don't have to think about twice.
           </p>
 
           <div className="flex gap-2.5">
             {socials.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={s.alt}
-                className="w-[34px] h-[34px] rounded-lg border border-[var(--theme-border)] flex items-center justify-center font-['JetBrains_Mono'] text-xs text-[var(--theme-text-secondary)] transition-colors duration-200 hover:border-[var(--theme-accent)] hover:text-[var(--theme-accent)]"
-              >
-                {s.label}
-              </a>
+              s.icon ? <FlipSocialIcon key={s.label} {...s} /> : (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.alt}
+                  className="w-[34px] h-[34px] rounded-lg border border-[var(--theme-border)] flex items-center justify-center font-['JetBrains_Mono'] text-xs text-[var(--theme-text-secondary)] transition-colors duration-200 hover:border-[var(--theme-accent)] hover:text-[var(--theme-accent)]"
+                >
+                  {s.label}
+                </a>
+              )
             ))}
           </div>
 
           <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 mt-1">
             <Link
               to="/about"
-              className="text-center px-6 py-3 rounded-lg bg-[var(--theme-accent)] text-[var(--theme-accent-on)] text-sm font-semibold no-underline transition-transform duration-200 hover:-translate-y-0.5"
+              className="shine text-center px-6 py-3 rounded-lg bg-[var(--theme-accent)] text-[var(--theme-accent-on)] text-sm font-semibold no-underline transition-transform duration-200 hover:-translate-y-0.5"
             >
               About Me →
             </Link>
@@ -86,7 +89,7 @@ const Home = () => {
         </div>
 
         {/* Right column: project cards */}
-        <div className="flex-1 flex flex-col gap-3.5">
+        <div className="flex-1 md:max-w-[760px] flex flex-col gap-3.5">
           <div className="font-['JetBrains_Mono'] text-xs tracking-[0.1em] text-[var(--theme-text-muted)] mb-0.5">{'// PROJECTS'}</div>
           {projects.map((p) => (
             <ProjectCard key={p.filename} {...p} />
@@ -112,14 +115,36 @@ const Home = () => {
   );
 };
 
-const ProjectCard = ({ filename, title, description, href, featured = false }) => (
+const FlipSocialIcon = ({ href, alt, label, icon }) => (
   <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className={`group block rounded-[10px] bg-[var(--theme-surface)] border overflow-hidden no-underline transition-colors duration-200 ${
-      featured ? 'border-[var(--theme-accent)]' : 'border-[var(--theme-border)] hover:border-[var(--theme-accent)]'
-    }`}
+    aria-label={alt}
+    className="group block w-[34px] h-[34px] [perspective:400px] transition-[filter] duration-500 hover:drop-shadow-[0_4px_10px_rgba(0,0,0,0.35)]"
+  >
+    <div
+      className="relative w-full h-full [transform-style:preserve-3d] transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:[transform:rotateY(180deg)_scale(1.15)]"
+    >
+      <span className="absolute inset-0 rounded-lg border border-[var(--theme-border)] bg-[var(--theme-bg)] flex items-center justify-center font-['JetBrains_Mono'] text-xs text-[var(--theme-text-secondary)] [backface-visibility:hidden]">
+        {label}
+      </span>
+      <span
+        className="absolute inset-0 rounded-lg border border-[var(--theme-border)] bg-[#C7C7C7] flex items-center justify-center [backface-visibility:hidden]"
+        style={{ transform: 'rotateY(180deg)' }}
+      >
+        <img src={icon} alt="" className="w-4.5 h-4.5" />
+      </span>
+    </div>
+  </a>
+);
+
+const ProjectCard = ({ filename, title, description, href }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group block rounded-[10px] bg-[var(--theme-surface)] border border-[var(--theme-border)] hover:border-[var(--theme-accent)] overflow-hidden no-underline transition-colors duration-200"
   >
     <div className="h-[34px] flex items-center gap-2 px-3.5 bg-[var(--theme-surface-topbar)] border-b border-[var(--theme-border)]">
       <span className="w-[9px] h-[9px] rounded-full bg-[#C9776A] dark:bg-[#8B4A3E]" />
@@ -130,7 +155,7 @@ const ProjectCard = ({ filename, title, description, href, featured = false }) =
     <div className="px-5 py-4 flex flex-col gap-1.5">
       <div className="font-['Space_Grotesk'] font-bold text-base text-[var(--theme-text-primary)]">{title}</div>
       <div className="text-[13px] leading-relaxed text-[var(--theme-text-secondary)]">{description}</div>
-      <div className={`font-['JetBrains_Mono'] text-xs mt-1 ${featured ? 'text-[var(--theme-accent)]' : 'text-[var(--theme-text-muted)] group-hover:text-[var(--theme-accent)]'}`}>
+      <div className="font-['JetBrains_Mono'] text-xs mt-1 text-[var(--theme-text-muted)] group-hover:text-[var(--theme-accent)]">
         open →
       </div>
     </div>

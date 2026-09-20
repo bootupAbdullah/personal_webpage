@@ -43,6 +43,27 @@ body {
   color: var(--theme-text-primary);
 }
 
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(20deg);
+  transition: left 0.65s ease;
+}
+
+.shine:hover::after {
+  left: 125%;
+}
+
 .prose-blog {
   font-family: 'IBM Plex Serif', serif;
   font-size: 0.95rem;

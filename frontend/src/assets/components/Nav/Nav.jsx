@@ -17,7 +17,7 @@ const Nav = () => {
 
         <div className="flex items-center gap-3 md:gap-10">
           {/* Desktop links */}
-          <ul className="hidden md:flex flex-row gap-10 list-none m-0 p-0 text-sm font-medium">
+          <ul className="hidden md:flex flex-row gap-10 list-none m-0 p-0 text-base font-medium">
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/about">About</NavLink></li>
             <li><NavLink to="/contact">Contact</NavLink></li>
