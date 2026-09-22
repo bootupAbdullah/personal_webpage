@@ -23,9 +23,9 @@ const projects = [
 ];
 
 const socials = [
-  { label: 'in', href: 'https://www.linkedin.com/in/abdullah-durrani', alt: 'LinkedIn', icon: '/images/svg/linkedin-svgrepo-com.svg' },
-  { label: 'gh', href: 'https://github.com/bootupAbdullah', alt: 'GitHub', icon: '/images/svg/github-142-svgrepo-com.svg' },
-  { label: 'bs', href: 'https://bsky.app/profile/layinthegrass.bsky.social', alt: 'Bluesky', icon: '/images/svg/bluesky_media_kit_logo_1.svg' },
+  { label: 'in', href: 'https://www.linkedin.com/in/abdullah-durrani', alt: 'LinkedIn' },
+  { label: 'gh', href: 'https://github.com/bootupAbdullah', alt: 'GitHub' },
+  { label: 'bs', href: 'https://bsky.app/profile/layinthegrass.bsky.social', alt: 'Bluesky' },
 ];
 
 const stack = ['Go', 'Python', 'AWS', 'Docker', 'Kubernetes', 'PostgreSQL', 'Terraform'];
@@ -57,18 +57,16 @@ const Home = () => {
 
           <div className="flex gap-2.5">
             {socials.map((s) => (
-              s.icon ? <FlipSocialIcon key={s.label} {...s} /> : (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.alt}
-                  className="w-[34px] h-[34px] rounded-lg border border-[var(--theme-border)] flex items-center justify-center font-['JetBrains_Mono'] text-xs text-[var(--theme-text-secondary)] transition-colors duration-200 hover:border-[var(--theme-accent)] hover:text-[var(--theme-accent)]"
-                >
-                  {s.label}
-                </a>
-              )
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.alt}
+                className="w-[34px] h-[34px] rounded-lg border border-[var(--theme-border)] flex items-center justify-center font-['JetBrains_Mono'] text-xs text-[var(--theme-text-secondary)] transition-all duration-200 hover:scale-110 hover:border-[var(--theme-accent)] hover:text-[var(--theme-accent)]"
+              >
+                {s.label}
+              </a>
             ))}
           </div>
 
@@ -114,30 +112,6 @@ const Home = () => {
     </div>
   );
 };
-
-const FlipSocialIcon = ({ href, alt, label, icon }) => (
-  <a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label={alt}
-    className="group block w-[34px] h-[34px] [perspective:400px] transition-[filter] duration-500 hover:drop-shadow-[0_4px_10px_rgba(0,0,0,0.35)]"
-  >
-    <div
-      className="relative w-full h-full [transform-style:preserve-3d] transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:[transform:rotateY(180deg)_scale(1.15)]"
-    >
-      <span className="absolute inset-0 rounded-lg border border-[var(--theme-border)] bg-[var(--theme-bg)] flex items-center justify-center font-['JetBrains_Mono'] text-xs text-[var(--theme-text-secondary)] [backface-visibility:hidden]">
-        {label}
-      </span>
-      <span
-        className="absolute inset-0 rounded-lg border border-[var(--theme-border)] bg-[#C7C7C7] flex items-center justify-center [backface-visibility:hidden]"
-        style={{ transform: 'rotateY(180deg)' }}
-      >
-        <img src={icon} alt="" className="w-4.5 h-4.5" />
-      </span>
-    </div>
-  </a>
-);
 
 const ProjectCard = ({ filename, title, description, href }) => (
   <a
