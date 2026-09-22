@@ -1,9 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../../../context/ThemeContext';
+import { posts } from '../../../posts';
+
+const LAST_SEEN_BLOG_KEY = 'lastSeenBlogSlug';
 
 const Nav = () => {
   const [open, setOpen] = useState(false);
+  const [hasNewPost, setHasNewPost] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const latestSlug = posts[0]?.slug;
+    if (!latestSlug) return;
+
+    if (location.pathname === '/blog') {
+      localStorage.setItem(LAST_SEEN_BLOG_KEY, latestSlug);
+      setHasNewPost(false);
+    } else {
+      setHasNewPost(localStorage.getItem(LAST_SEEN_BLOG_KEY) !== latestSlug);
+    }
+  }, [location.pathname]);
 
   return (
     <header className="sticky top-0 z-50 bg-[var(--theme-bg)]/90 backdrop-blur-sm border-b border-[var(--theme-border)]">
@@ -20,8 +37,8 @@ const Nav = () => {
           <ul className="hidden md:flex flex-row gap-10 list-none m-0 p-0 text-base font-medium">
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/about">About</NavLink></li>
+            <li><NavLink to="/blog" badge={hasNewPost}>Blog</NavLink></li>
             <li><NavLink to="/contact">Contact</NavLink></li>
-            <li><NavLink to="/blog">Blog</NavLink></li>
           </ul>
 
           <ThemeToggle />
@@ -44,8 +61,8 @@ const Nav = () => {
         <ul className="md:hidden flex flex-col list-none m-0 py-2 px-0 border-t border-[var(--theme-border)] bg-[var(--theme-surface)] text-base font-medium">
           <li><NavLink to="/" mobile onClick={() => setOpen(false)}>Home</NavLink></li>
           <li><NavLink to="/about" mobile onClick={() => setOpen(false)}>About</NavLink></li>
+          <li><NavLink to="/blog" mobile badge={hasNewPost} onClick={() => setOpen(false)}>Blog</NavLink></li>
           <li><NavLink to="/contact" mobile onClick={() => setOpen(false)}>Contact</NavLink></li>
-          <li><NavLink to="/blog" mobile onClick={() => setOpen(false)}>Blog</NavLink></li>
         </ul>
       )}
     </header>
@@ -70,9 +87,29 @@ const ThemeToggle = () => {
   );
 };
 
-const NavLink = ({ to, children, onClick, mobile = false }) => {
+const NewPostBadge = () => (
+  <span
+    className="absolute font-['JetBrains_Mono'] font-bold text-[var(--theme-accent)]"
+    style={{ fontSize: '0.6em', top: '-0.1em', right: '-0.7em' }}
+    aria-hidden="true"
+  >
+    !
+  </span>
+);
+
+const NavLink = ({ to, children, onClick, mobile = false, badge = false }) => {
   const { pathname } = useLocation();
   const isActive = pathname === to;
+
+  const label = badge ? (
+    <span className="relative">
+      {children}
+      <NewPostBadge />
+      <span className="sr-only"> (new post)</span>
+    </span>
+  ) : (
+    children
+  );
 
   if (mobile) {
     return (
@@ -83,7 +120,7 @@ const NavLink = ({ to, children, onClick, mobile = false }) => {
           isActive ? 'text-[var(--theme-accent)] font-semibold' : 'text-[var(--theme-text-secondary)]'
         }`}
       >
-        {children}
+        {label}
       </Link>
     );
   }
@@ -100,7 +137,7 @@ const NavLink = ({ to, children, onClick, mobile = false }) => {
           : 'text-[var(--theme-text-secondary)] after:w-0 hover:text-[var(--theme-text-primary)] hover:after:w-full'
         }`}
     >
-      {children}
+      {label}
     </Link>
   );
 };
