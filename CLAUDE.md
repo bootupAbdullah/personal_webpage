@@ -43,6 +43,11 @@ Write in plain prose. No emojis. No em dashes — use commas or regular hyphens 
 ![Alt text](/images/posts/your-post-slug/image-name.png)
 ```
 
+### 4. Add the URL to the sitemap
+File: `frontend/public/sitemap.xml`
+
+Add a `<url>` entry for `https://akddev.co/blog/your-post-slug` with a `<lastmod>` matching the post's date. This is hand-maintained, not generated — easy to forget.
+
 ## Branch + Deploy Workflow
 1. Create a branch: `git checkout -b feature/your-feature`
 2. Make changes, commit

@@ -1,4 +1,5 @@
 import React from 'react';
+import useDocumentMeta from '../../../hooks/useDocumentMeta';
 
 const bio = [
   "I'm a software engineer who discovered programming while working in tax preparation. What started as evening and weekend learning became a passion I couldn't ignore.",
@@ -40,7 +41,14 @@ const jobs = [
   },
 ];
 
-const About = () => (
+const About = () => {
+  useDocumentMeta({
+    title: 'About',
+    description: 'Background, work history, and skills for Abdullah Durrani, a backend and DevOps-focused software engineer.',
+    path: '/about',
+  });
+
+  return (
   <div className="flex justify-center px-5 md:px-16 py-10 md:py-16">
     <div className="w-full max-w-[640px] flex flex-col gap-5 md:gap-6">
 
@@ -99,6 +107,7 @@ const About = () => (
 
     </div>
   </div>
-);
+  );
+};
 
 export default About;

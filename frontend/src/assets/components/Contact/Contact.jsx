@@ -1,4 +1,5 @@
 import React from 'react';
+import useDocumentMeta from '../../../hooks/useDocumentMeta';
 
 const items = [
   { code: 'em', label: 'EMAIL', value: 'akddev.co@gmail.com', href: 'mailto:akddev.co@gmail.com' },
@@ -6,7 +7,14 @@ const items = [
   { code: 'gh', label: 'GITHUB', value: 'bootupAbdullah', href: 'https://github.com/bootupAbdullah' },
 ];
 
-const Contact = () => (
+const Contact = () => {
+  useDocumentMeta({
+    title: 'Contact',
+    description: 'Get in touch with Abdullah Durrani — email, LinkedIn, and GitHub.',
+    path: '/contact',
+  });
+
+  return (
   <div className="flex justify-center px-5 md:px-16 py-10 md:py-16">
     <div className="w-full max-w-[920px] flex flex-col gap-8 md:gap-10">
 
@@ -60,7 +68,8 @@ const Contact = () => (
       </div>
     </div>
   </div>
-);
+  );
+};
 
 const ContactItem = ({ code, label, value, href }) => (
   <a
