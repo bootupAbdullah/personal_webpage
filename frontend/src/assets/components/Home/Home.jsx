@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useDocumentMeta from '../../../hooks/useDocumentMeta';
 
 const projects = [
   {
@@ -31,6 +32,12 @@ const socials = [
 const stack = ['Go', 'Python', 'AWS', 'Docker', 'Kubernetes', 'PostgreSQL', 'Terraform'];
 
 const Home = () => {
+  useDocumentMeta({
+    title: 'Abdullah Durrani',
+    description: 'Abdullah Durrani — software engineer building backend systems, cloud infrastructure, and DevOps tooling. Portfolio, projects, and technical writing.',
+    path: '/',
+  });
+
   return (
     <div className="flex flex-col md:min-h-[calc(100vh-136px)]">
       {/* HERO */}

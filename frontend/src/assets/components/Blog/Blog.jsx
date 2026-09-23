@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { posts } from '../../../posts/index';
+import useDocumentMeta from '../../../hooks/useDocumentMeta';
 
 const linkOrder = [
   { key: 'flow', label: 'flow chart' },
@@ -8,7 +9,14 @@ const linkOrder = [
   { key: 'bluesky', label: 'bluesky' },
 ];
 
-const Blog = () => (
+const Blog = () => {
+  useDocumentMeta({
+    title: 'Blog',
+    description: 'Technical writing from Abdullah Durrani on backend systems, infrastructure, and DevOps projects.',
+    path: '/blog',
+  });
+
+  return (
   <div className="flex justify-center px-5 md:px-16 py-8 md:py-14">
     <div className="w-full max-w-[760px] flex flex-col gap-5 md:gap-6">
 
@@ -24,7 +32,8 @@ const Blog = () => (
       </div>
     </div>
   </div>
-);
+  );
+};
 
 const PostCard = ({ slug, title, subtitle, date, links = {}, flow, featured = false }) => {
   const activeLinks = linkOrder.filter(({ key }) => (key === 'flow' ? flow : links[key]));
@@ -40,7 +49,7 @@ const PostCard = ({ slug, title, subtitle, date, links = {}, flow, featured = fa
           <span className="font-['JetBrains_Mono'] text-[11px] md:text-xs text-[var(--theme-text-muted)]">{slug}.mdx</span>
           <span className="font-['JetBrains_Mono'] text-[10px] md:text-[11px] text-[var(--theme-text-muted)] whitespace-nowrap">{date}</span>
         </div>
-        <div className="font-['Space_Grotesk'] font-bold text-lg md:text-[22px] leading-snug text-[var(--theme-text-primary)] mt-2.5">{title}</div>
+        <h2 className="m-0 font-['Space_Grotesk'] font-bold text-lg md:text-[22px] leading-snug text-[var(--theme-text-primary)] mt-2.5">{title}</h2>
         <p className="m-0 mt-2 font-['Work_Sans'] text-[13px] md:text-sm leading-relaxed text-[var(--theme-text-secondary)] max-w-[620px]">{subtitle}</p>
       </Link>
       {activeLinks.length > 0 && (

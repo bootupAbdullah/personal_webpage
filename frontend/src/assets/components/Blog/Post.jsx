@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { posts } from '../../../posts/index';
+import useDocumentMeta from '../../../hooks/useDocumentMeta';
 
 const postModules = import.meta.glob('../../../posts/*.mdx', { eager: true });
 
@@ -7,6 +8,12 @@ const Post = () => {
   const { slug } = useParams();
   const meta = posts.find((p) => p.slug === slug);
   const mod = postModules[`../../../posts/${slug}.mdx`];
+
+  useDocumentMeta({
+    title: meta?.title,
+    description: meta?.subtitle,
+    path: `/blog/${slug}`,
+  });
 
   if (!meta || !mod) {
     return (
