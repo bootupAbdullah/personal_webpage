@@ -1,0 +1,26 @@
+services:
+  akddev-site:
+    image: ghcr.io/bootupabdullah/akddev-site:latest
+    restart: unless-stopped
+    networks: [web]
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks: [web]
+
+networks:
+  web:
+
+volumes:
+  caddy_data:
+  caddy_config:

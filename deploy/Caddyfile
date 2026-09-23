@@ -1,0 +1,12 @@
+akddev.co {
+	reverse_proxy akddev-site:80
+}
+
+www.akddev.co {
+	redir https://akddev.co{uri} permanent
+}
+
+# Existing site, currently served by host nginx -> localhost:8080
+entrvm.xyz {
+	reverse_proxy host.docker.internal:8080
+}
