@@ -1,40 +1,82 @@
 import React from 'react';
 
-const Contact = () => (
-  <div className="flex flex-col items-center justify-center py-16 px-8 min-h-[75vh]">
-    <p className="font-['Merriweather'] text-xs uppercase tracking-widest text-[#aaaaaa] dark:text-[#666666] m-0 mb-4">Say Hello</p>
-    <h1 className="font-['Merriweather'] text-3xl font-bold text-[#2d2d2d] dark:text-[#e8e8e8] m-0 mb-3">Get In Touch</h1>
-    <p className="font-['Merriweather'] text-base text-[#777777] dark:text-[#909090] mb-12 text-center max-w-sm leading-relaxed">
-      I'm actively seeking software development opportunities and would love to connect.
-    </p>
+const items = [
+  { code: 'em', label: 'EMAIL', value: 'akddev.co@gmail.com', href: 'mailto:akddev.co@gmail.com' },
+  { code: 'in', label: 'LINKEDIN', value: 'abdullah-durrani', href: 'https://www.linkedin.com/in/abdullah-durrani/' },
+  { code: 'gh', label: 'GITHUB', value: 'bootupAbdullah', href: 'https://github.com/bootupAbdullah' },
+];
 
-    <div className="flex flex-col gap-5 w-full max-w-sm">
-      <ContactItem icon="images/svg/gmail-svgrepo-com.svg" alt="Gmail" label="Email">
-        <a href="mailto:akddev.co@gmail.com" className="text-[var(--theme-accent)] no-underline hover:text-[var(--theme-accent-hover)] transition-colors duration-200">
-          akddev.co@gmail.com
+const Contact = () => (
+  <div className="flex justify-center px-5 md:px-16 py-10 md:py-16">
+    <div className="w-full max-w-[920px] flex flex-col gap-8 md:gap-10">
+
+      <div className="flex flex-col gap-3">
+        <div className="font-['JetBrains_Mono'] text-[11px] md:text-xs tracking-[0.1em] text-[var(--theme-text-muted)] mb-2">{'// CONTACT'}</div>
+        <h1 className="m-0 font-['Space_Grotesk'] font-bold text-[28px] md:text-4xl text-[var(--theme-text-primary)]">Get In Touch</h1>
+        <a
+          href="mailto:akddev.co@gmail.com"
+          aria-label="Email Abdullah"
+          className="group inline-flex items-center gap-2 py-1.5 px-3 mt-4 border border-[var(--theme-border)] rounded-full bg-[#FAF6EC] dark:bg-[var(--theme-surface)] w-fit no-underline transition-transform duration-200 hover:scale-105"
+        >
+          <span className="relative flex w-[7px] h-[7px]">
+            <span className="absolute inline-flex w-full h-full rounded-full bg-[var(--theme-accent)] opacity-75 animate-ping" />
+            <span className="absolute inline-flex w-full h-full rounded-full bg-[var(--theme-accent)] opacity-0 scale-100 transition-all duration-300 group-hover:opacity-60 group-hover:scale-[3] group-hover:animate-ping" />
+            <span className="relative inline-flex w-[7px] h-[7px] rounded-full bg-[var(--theme-accent)]" />
+          </span>
+          <span className="font-['JetBrains_Mono'] text-[10px] md:text-[11px] tracking-[0.12em] text-[var(--theme-text-secondary)]">AVAILABLE FOR WORK</span>
         </a>
-      </ContactItem>
-      <ContactItem icon="images/svg/linkedin-svgrepo-com.svg" alt="LinkedIn" label="LinkedIn">
-        <a href="https://www.linkedin.com/in/abdullah-durrani/" target="_blank" rel="noopener noreferrer" className="text-[var(--theme-accent)] no-underline hover:text-[var(--theme-accent-hover)] transition-colors duration-200">
-          abdullah-durrani
-        </a>
-      </ContactItem>
-      <ContactItem icon="images/svg/github-142-svgrepo-com.svg" alt="GitHub" label="GitHub" invert>
-        <a href="https://github.com/bootupAbdullah" target="_blank" rel="noopener noreferrer" className="text-[var(--theme-accent)] no-underline hover:text-[var(--theme-accent-hover)] transition-colors duration-200">
-          bootupAbdullah
-        </a>
-      </ContactItem>
+      </div>
+
+      <div className="flex flex-col md:flex-row items-start gap-8 md:gap-14">
+
+        {/* Photo */}
+        <div className="w-full md:flex-none md:w-[320px] rounded-[10px] border border-[var(--theme-border)] bg-[#FAF6EC] dark:bg-[var(--theme-surface)] shadow-lg overflow-hidden">
+          <div className="h-[34px] flex items-center gap-2 px-3.5 bg-[#F2ECDD] dark:bg-[var(--theme-surface-topbar)] border-b border-[var(--theme-border)]">
+            <span className="w-[9px] h-[9px] rounded-full bg-[#C9776A] dark:bg-[#8B4A3E]" />
+            <span className="w-[9px] h-[9px] rounded-full bg-[#D9A857] dark:bg-[#A67C3D]" />
+            <span className="w-[9px] h-[9px] rounded-full bg-[#4FA97D] dark:bg-[#3D8B68]" />
+            <span className="font-['JetBrains_Mono'] text-xs text-[var(--theme-text-muted)] ml-1">dscf2243.jpg</span>
+          </div>
+          <img
+            src="/images/contact-photo.jpg"
+            alt="Abdullah Durrani"
+            className="block w-full h-[260px] md:h-[300px] object-cover"
+            style={{ objectPosition: '50% 5%' }}
+          />
+        </div>
+
+        {/* Contact info */}
+        <div className="flex-1 flex flex-col gap-5 md:gap-6">
+          <p className="m-0 font-['Work_Sans'] text-base md:text-base leading-relaxed text-[var(--theme-text-secondary)] max-w-[460px]">
+            I&apos;m actively seeking software development opportunities and would love to connect.
+          </p>
+
+          <div className="flex flex-col gap-2.5 md:gap-3">
+            {items.map((item) => (
+              <ContactItem key={item.code} {...item} />
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 );
 
-const ContactItem = ({ icon, alt, label, children, invert = false }) => (
-  <div className="flex items-center gap-4 bg-white dark:bg-[#1e1e1e] go:bg-[#1A2D3E] border border-[#e9edc9] dark:border-[#333333] go:border-[#2A4A5E] rounded-lg px-5 py-4 shadow-sm">
-    <img src={icon} alt={alt} className={`w-6 h-6 shrink-0 opacity-60 ${invert ? 'dark:invert' : ''}`} />
-    <span className="font-['Merriweather'] text-base text-[#555555] dark:text-[#b0b0b0]">
-      <span className="font-bold text-[#333333] dark:text-[#dddddd]">{label}:</span>{' '}{children}
+const ContactItem = ({ code, label, value, href }) => (
+  <a
+    href={href}
+    target={href.startsWith('http') ? '_blank' : undefined}
+    rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+    className="flex items-center gap-3.5 md:gap-4 border-2 border-[var(--theme-border)] rounded-[10px] bg-[#FAF6EC] dark:bg-[var(--theme-surface)] shadow-md px-4 py-3.5 md:px-5 md:py-4 no-underline transition-all duration-200 hover:scale-[1.005] hover:border-[var(--theme-accent)]"
+  >
+    <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-lg border border-[var(--theme-accent)]/30 bg-[var(--theme-accent)]/10 flex items-center justify-center font-['JetBrains_Mono'] text-[10px] md:text-[11px] text-[var(--theme-accent)]">
+      {code}
     </span>
-  </div>
+    <span>
+      <span className="block font-['JetBrains_Mono'] text-[10px] md:text-[11px] tracking-[0.08em] text-[var(--theme-text-muted)]">{label}</span>
+      <span className="block font-['Work_Sans'] text-sm md:text-[15px] font-medium text-[var(--theme-accent)] mt-0.5">{value}</span>
+    </span>
+  </a>
 );
 
 export default Contact;

@@ -4,27 +4,21 @@ const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'light';
+    return localStorage.getItem('theme') || 'dark';
   });
 
   useEffect(() => {
     const root = document.documentElement;
-    root.classList.remove('dark', 'go');
-    if (theme === 'dark') root.classList.add('dark');
-    if (theme === 'go') root.classList.add('go');
+    root.classList.toggle('dark', theme === 'dark');
     localStorage.setItem('theme', theme);
   }, [theme]);
 
   const toggleDarkMode = () => {
-    setTheme(t => (t === 'light' ? 'dark' : 'light'));
-  };
-
-  const activateGoTheme = () => {
-    setTheme(t => (t === 'go' ? 'light' : 'go'));
+    setTheme(t => (t === 'dark' ? 'light' : 'dark'));
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleDarkMode, activateGoTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleDarkMode }}>
       {children}
     </ThemeContext.Provider>
   );

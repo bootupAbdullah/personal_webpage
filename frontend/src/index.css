@@ -1,70 +1,125 @@
 @import "tailwindcss";
 
-@variant dark (&:where(.dark, .dark *, .go, .go *));
-@variant go (&:where(.go, .go *));
+@variant dark (&:where(.dark, .dark *));
 
 :root {
-  --theme-accent: #c07830;
-  --theme-accent-hover: #9a5a1f;
+  --theme-bg: #ECE2CE;
+  --theme-surface: #F5EFDE;
+  --theme-surface-topbar: #EFE6CD;
+  --theme-border: #A8C2AD;
+  --theme-accent: #1B8A63;
+  --theme-accent-on: #12251C;
+  --theme-text-primary: #1A140C;
+  --theme-text-secondary: #453A28;
+  --theme-text-muted: #6B5D42;
+  --theme-prose-bg: #E0ECE1;
+  --theme-prose-border: #A8C2AD;
+  --theme-code-bg: #EFE6CD;
+  --theme-code-text: #8A5A2E;
 }
 
-.go {
-  --theme-accent: #00AED8;
-  --theme-accent-hover: #007D9C;
+.dark {
+  --theme-bg: #0A0E13;
+  --theme-surface: #11151C;
+  --theme-surface-topbar: #161B23;
+  --theme-border: #1E242D;
+  --theme-accent: #3DDC97;
+  --theme-accent-on: #0A0E13;
+  --theme-text-primary: #F3F4F6;
+  --theme-text-secondary: #8A93A0;
+  --theme-text-muted: #6B7280;
+  --theme-prose-bg: #152C22;
+  --theme-prose-border: #1B3A30;
+  --theme-code-bg: #0A1A15;
+  --theme-code-text: #D8AE7E;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #faf8f5;
+  font-family: 'IBM Plex Sans', sans-serif;
+  background-color: var(--theme-bg);
+  color: var(--theme-text-primary);
 }
 
-.dark body {
-  background-color: #111111;
+.shine {
+  position: relative;
+  overflow: hidden;
 }
 
-.go body {
-  background-color: #0F1F2E;
+.shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(20deg);
+  transition: left 0.65s ease;
+}
+
+.shine:hover::after {
+  left: 125%;
 }
 
 .prose-blog {
-  font-family: 'Merriweather', serif;
+  font-family: 'IBM Plex Serif', serif;
   font-size: 0.95rem;
   line-height: 1.9;
-  color: #444444;
+  color: var(--theme-text-secondary);
+}
+
+.prose-blog > * + * {
+  margin-top: 1.5rem;
 }
 
 .prose-blog p {
-  margin: 0 0 1.5rem 0;
+  margin: 0;
 }
 
 .prose-blog h2 {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #2d2d2d;
-  margin: 2.5rem 0 1rem 0;
+  color: var(--theme-text-primary);
 }
 
 .prose-blog h3 {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1rem;
   font-weight: 700;
-  color: #2d2d2d;
-  margin: 2rem 0 0.75rem 0;
+  color: var(--theme-text-primary);
+}
+
+.prose-blog .prose-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  background: var(--theme-prose-bg);
+  border: 1px solid var(--theme-prose-border);
+  border-radius: 0.625rem;
+  padding: 1.4rem 1.6rem;
+}
+
+.prose-blog .prose-group > * {
+  margin: 0;
 }
 
 .prose-blog pre {
-  background: #f5f2ed;
-  border: 1px solid #e9edc9;
-  border-radius: 0.5rem;
-  padding: 1.25rem 1.5rem;
+  background: var(--theme-surface);
+  border: 1px solid var(--theme-border);
+  border-radius: 0.625rem;
+  padding: 1rem 1.25rem;
   overflow-x: auto;
-  margin: 1.5rem 0;
 }
 
 .prose-blog code {
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.85rem;
-  background: #f5f2ed;
+  background: var(--theme-code-bg);
+  color: var(--theme-code-text);
   border-radius: 0.25rem;
   padding: 0.1rem 0.35rem;
 }
@@ -72,24 +127,24 @@ body {
 .prose-blog pre code {
   background: none;
   padding: 0;
+  color: var(--theme-code-text);
 }
 
 .prose-blog a {
-  color: #c07830;
+  color: var(--theme-accent);
   text-decoration: underline;
 }
 
 .prose-blog blockquote {
-  border-left: 3px solid #c07830;
-  margin: 1.5rem 0;
+  border-left: 3px solid var(--theme-accent);
   padding: 0.5rem 0 0.5rem 1.25rem;
-  color: #666666;
+  color: var(--theme-text-muted);
   font-style: italic;
 }
 
 .prose-blog ul, .prose-blog ol {
   padding-left: 1.5rem;
-  margin: 0 0 1.5rem 0;
+  margin: 0;
 }
 
 .prose-blog li {
@@ -99,6 +154,28 @@ body {
 .prose-blog img {
   width: 100%;
   border-radius: 0.5rem;
-  margin: 1.5rem 0;
-  border: 1px solid #e0d5c5;
+  border: 1px solid var(--theme-border);
+}
+
+.react-flow__controls {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: none !important;
+  border: 1px solid var(--theme-border);
+}
+
+.react-flow__controls-button {
+  background: var(--theme-surface) !important;
+  border: none !important;
+  border-bottom: 1px solid var(--theme-border) !important;
+  fill: var(--theme-text-secondary) !important;
+}
+
+.react-flow__controls-button:hover {
+  background: var(--theme-surface-topbar) !important;
+}
+
+.react-flow__minimap {
+  border-radius: 0.5rem;
+  overflow: hidden;
 }

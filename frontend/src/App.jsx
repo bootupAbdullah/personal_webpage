@@ -13,7 +13,7 @@ import { ThemeProvider } from './context/ThemeContext';
 const App = () => {
   return (
     <ThemeProvider>
-      <main className="min-h-screen flex flex-col justify-between font-['Merriweather'] bg-[#faf8f5] dark:bg-[#111111] go:bg-[#0F1F2E]">
+      <main className="min-h-screen flex flex-col justify-between bg-[var(--theme-bg)]">
         <div>
           <Nav />
           <Routes>
