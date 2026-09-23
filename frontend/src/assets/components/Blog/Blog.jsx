@@ -31,7 +31,7 @@ const PostCard = ({ slug, title, subtitle, date, links = {}, flow, featured = fa
 
   return (
     <div
-      className={`rounded-xl bg-[var(--theme-surface)] border px-5 py-4.5 md:px-7 md:py-6 transition-colors duration-200 ${
+      className={`rounded-xl bg-[#FAF6EC] dark:bg-[var(--theme-surface)] border shadow-md px-5 py-4.5 md:px-7 md:py-6 transition-all duration-200 hover:scale-[1.005] ${
         featured ? 'border-[var(--theme-accent)]' : 'border-[var(--theme-border)] hover:border-[var(--theme-accent)]'
       }`}
     >
@@ -41,7 +41,7 @@ const PostCard = ({ slug, title, subtitle, date, links = {}, flow, featured = fa
           <span className="font-['JetBrains_Mono'] text-[10px] md:text-[11px] text-[var(--theme-text-muted)] whitespace-nowrap">{date}</span>
         </div>
         <div className="font-['Space_Grotesk'] font-bold text-lg md:text-[22px] leading-snug text-[var(--theme-text-primary)] mt-2.5">{title}</div>
-        <p className="m-0 mt-2 text-[13px] md:text-sm leading-relaxed text-[var(--theme-text-secondary)] max-w-[620px]">{subtitle}</p>
+        <p className="m-0 mt-2 font-['Work_Sans'] text-[13px] md:text-sm leading-relaxed text-[var(--theme-text-secondary)] max-w-[620px]">{subtitle}</p>
       </Link>
       {activeLinks.length > 0 && (
         <div className="flex flex-wrap gap-4 md:gap-5 mt-3.5">

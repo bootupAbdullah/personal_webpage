@@ -25,7 +25,7 @@ const Post = () => {
 
         <Link
           to="/blog"
-          className="inline-flex items-center w-fit font-['JetBrains_Mono'] text-[11px] md:text-xs font-semibold text-[var(--theme-accent-on)] bg-[var(--theme-accent)] rounded-full py-1.5 px-3.5 md:py-2 md:px-4 no-underline"
+          className="inline-flex items-center w-fit font-['JetBrains_Mono'] text-[11px] md:text-xs font-semibold text-[var(--theme-accent-on)] bg-[var(--theme-accent)] rounded-full py-1.5 px-3.5 md:py-2 md:px-4 no-underline transition-all duration-200 hover:-translate-y-0.5 hover:text-white dark:hover:text-gray-200!"
         >
           ← back to blog
         </Link>
@@ -63,7 +63,7 @@ const Post = () => {
         </div>
 
         <h1 className="m-0 mt-2.5 font-['Space_Grotesk'] font-bold text-2xl md:text-[34px] leading-[1.25] md:leading-[1.2] text-[var(--theme-text-primary)]">{meta.title}</h1>
-        <p className="m-0 mt-2 text-sm md:text-base leading-relaxed text-[var(--theme-text-secondary)]">{meta.subtitle}</p>
+        <p className="m-0 mt-2 font-['Work_Sans'] text-sm md:text-base leading-relaxed text-[var(--theme-text-secondary)]">{meta.subtitle}</p>
 
         <div
           className="h-0.5 mt-5 md:mt-7"

@@ -58,7 +58,7 @@ const Nav = () => {
 
       {/* Mobile dropdown — pushes content down, not an overlay */}
       {open && (
-        <ul className="md:hidden flex flex-col list-none m-0 py-2 px-0 border-t border-[var(--theme-border)] bg-[var(--theme-surface)] text-base font-medium">
+        <ul className="md:hidden flex flex-col list-none m-0 py-2 px-0 border-t border-[var(--theme-border)] divide-y divide-[var(--theme-border)] bg-[#FAF6EC] dark:bg-[var(--theme-surface)] shadow-lg text-base font-medium">
           <li><NavLink to="/" mobile onClick={() => setOpen(false)}>Home</NavLink></li>
           <li><NavLink to="/about" mobile onClick={() => setOpen(false)}>About</NavLink></li>
           <li><NavLink to="/blog" mobile badge={hasNewPost} onClick={() => setOpen(false)}>Blog</NavLink></li>
@@ -116,8 +116,8 @@ const NavLink = ({ to, children, onClick, mobile = false, badge = false }) => {
       <Link
         to={to}
         onClick={onClick}
-        className={`block text-center py-3.5 no-underline transition-colors duration-200 ${
-          isActive ? 'text-[var(--theme-accent)] font-semibold' : 'text-[var(--theme-text-secondary)]'
+        className={`block text-center py-3.5 no-underline transition-colors duration-200 hover:bg-[var(--theme-surface-topbar)] active:bg-[var(--theme-surface-topbar)] ${
+          isActive ? 'text-[var(--theme-accent)] font-semibold bg-[var(--theme-surface-topbar)]' : 'text-[var(--theme-text-secondary)]'
         }`}
       >
         {label}
