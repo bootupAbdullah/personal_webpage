@@ -12,7 +12,7 @@ const skills = ['Go', 'JavaScript', 'Node.js', 'Python', 'PostgreSQL', 'Docker',
 const jobs = [
   {
     company: 'IMB (International Mission Board)',
-    location: 'Remote',
+    location: 'Hybrid',
     title: 'Service Desk Analyst',
     period: 'Mar 2026 – Present',
     description: 'Applying technical fluency to accelerate ticket diagnostics and improve resolution accuracy across software, access, and connectivity issues. Utilized SolarWinds for ticket management, Azure AD for identity and access troubleshooting, Jamf for endpoint management, and Omnitza for IT asset management. Contributed to internal process documentation and knowledge base development, including AI-assisted triage workflows via Microsoft Copilot and Copilot Studio.',
@@ -26,7 +26,7 @@ const jobs = [
   },
   {
     company: 'ProgramEarth',
-    location: '',
+    location: 'Remote',
     title: 'DevSecOps Fellow',
     period: 'May 2025 – Jul 2025',
     description: '10-week open-source fellowship focused on secure full-stack development using Docker, Node.JS, Twilio, CI/CD, and GitHub Actions. Contributing to real codebases and participating in cloud infrastructure workshops.',
@@ -75,7 +75,7 @@ const About = () => (
           <a
             href="/documents/Resume.pdf"
             download="Abdullah_Durrani_Resume.pdf"
-            className="flex-shrink-0 flex items-center gap-1.5 font-['JetBrains_Mono'] text-[11px] md:text-xs text-[var(--theme-accent)] border border-[var(--theme-accent)] rounded-full py-1.5 px-3.5 md:py-2 md:px-4 no-underline transition-colors duration-200 hover:bg-[var(--theme-accent)] hover:text-[var(--theme-accent-on)]"
+            className="flex-shrink-0 flex items-center gap-1.5 font-['JetBrains_Mono'] font-semibold text-[11px] md:text-xs text-[var(--theme-accent-on)] bg-[var(--theme-accent)] rounded-full py-1.5 px-3.5 md:py-2 md:px-4 no-underline transition-all duration-200 hover:-translate-y-0.5 hover:text-white dark:hover:text-gray-200!"
           >
             ↓ Resume
           </a>
