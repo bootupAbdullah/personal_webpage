@@ -40,7 +40,7 @@ const PostCard = ({ slug, title, subtitle, date, links = {}, flow, featured = fa
 
   return (
     <div
-      className={`rounded-xl bg-[#FAF6EC] dark:bg-[var(--theme-surface)] border shadow-md px-5 py-4.5 md:px-7 md:py-6 transition-all duration-200 hover:scale-[1.005] ${
+      className={`rounded-xl bg-[var(--theme-surface)] border shadow-sm px-5 py-4.5 md:px-7 md:py-6 transition-all duration-200 hover:scale-[1.005] ${
         featured ? 'border-[var(--theme-accent)]' : 'border-[var(--theme-border)] hover:border-[var(--theme-accent)]'
       }`}
     >
