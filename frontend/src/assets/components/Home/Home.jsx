@@ -48,7 +48,7 @@ const Home = () => {
           <a
             href="mailto:akddev.co@gmail.com"
             aria-label="Email Abdullah"
-            className="group inline-flex items-center gap-2 py-1.5 px-3 border border-[var(--theme-border)] rounded-full bg-[#FAF6EC] dark:bg-[var(--theme-surface)] w-fit no-underline transition-transform duration-200 hover:scale-105"
+            className="group inline-flex items-center gap-2 py-1.5 px-3 border border-[var(--theme-border)] rounded-full bg-[var(--theme-surface)] w-fit no-underline transition-transform duration-200 hover:scale-105"
           >
             <span className="relative flex w-[7px] h-[7px]">
               <span className="absolute inline-flex w-full h-full rounded-full bg-[var(--theme-accent)] opacity-75 animate-ping" />
@@ -114,7 +114,7 @@ const Home = () => {
           {stack.map((s) => (
             <span
               key={s}
-              className="font-['JetBrains_Mono'] text-xs text-[var(--theme-text-secondary)] bg-[#FAF6EC] dark:bg-[var(--theme-surface)] border border-[var(--theme-border)] rounded-md py-1.5 px-3"
+              className="font-['JetBrains_Mono'] text-xs text-[var(--theme-text-secondary)] bg-[var(--theme-surface)] border border-[var(--theme-border)] rounded-md py-1.5 px-3"
             >
               {s}
             </span>
@@ -130,9 +130,9 @@ const ProjectCard = ({ filename, title, description, href }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="group block rounded-[10px] bg-[#FAF6EC] dark:bg-[var(--theme-surface)] border border-[var(--theme-border)] shadow-md hover:border-[var(--theme-accent)] hover:scale-[1.005] overflow-hidden no-underline transition-all duration-200"
+    className="group block rounded-[10px] bg-[var(--theme-surface)] border border-[var(--theme-border)] shadow-sm hover:border-[var(--theme-accent)] hover:scale-[1.005] overflow-hidden no-underline transition-all duration-200"
   >
-    <div className="h-[34px] flex items-center gap-2 px-3.5 bg-[#F2ECDD] dark:bg-[var(--theme-surface-topbar)] border-b border-[var(--theme-border)]">
+    <div className="h-[34px] flex items-center gap-2 px-3.5 bg-[var(--theme-surface-topbar)] border-b border-[var(--theme-border)]">
       <span className="w-[9px] h-[9px] rounded-full bg-[#C9776A] dark:bg-[#8B4A3E]" />
       <span className="w-[9px] h-[9px] rounded-full bg-[#D9A857] dark:bg-[#A67C3D]" />
       <span className="w-[9px] h-[9px] rounded-full bg-[#4FA97D] dark:bg-[#3D8B68]" />

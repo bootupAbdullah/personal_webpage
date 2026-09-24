@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { ReactFlow, Background, Controls, MiniMap } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import StackNode from './StackNode';
+import { useTheme } from '../../../context/ThemeContext';
 
 const flowModules = import.meta.glob('../../../flows/*.js', { eager: true });
 
@@ -47,8 +48,14 @@ const buildGraph = (stack) => {
   return { nodes, edges };
 };
 
+const FLOW_COLORS = {
+  dark: { background: '#565D68', node: '#3DDC97', mask: 'rgba(10, 14, 19, 0.6)' },
+  light: { background: '#C3C9D2', node: '#11805A', mask: 'rgba(244, 246, 248, 0.6)' },
+};
+
 const Flow = () => {
   const { slug } = useParams();
+  const { theme } = useTheme();
   const mod = flowModules[`../../../flows/${slug}.js`];
 
   if (!mod) {
@@ -62,6 +69,7 @@ const Flow = () => {
 
   const { title, stack } = mod;
   const { nodes, edges } = buildGraph(stack);
+  const colors = FLOW_COLORS[theme];
 
   return (
     <div>
@@ -84,15 +92,16 @@ const Flow = () => {
           nodes={nodes}
           edges={edges}
           nodeTypes={nodeTypes}
+          colorMode={theme}
           nodesDraggable={false}
           fitView
           minZoom={0.3}
           maxZoom={1.5}
           proOptions={{ hideAttribution: true }}
         >
-          <Background gap={24} color="#565D68" />
+          <Background gap={24} color={colors.background} />
           <Controls showInteractive={false} />
-          <MiniMap pannable zoomable nodeColor="#3DDC97" maskColor="rgba(10, 14, 19, 0.6)" />
+          <MiniMap pannable zoomable nodeColor={colors.node} maskColor={colors.mask} />
         </ReactFlow>
       </div>
     </div>

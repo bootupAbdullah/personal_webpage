@@ -24,7 +24,7 @@ const Contact = () => {
         <a
           href="mailto:akddev.co@gmail.com"
           aria-label="Email Abdullah"
-          className="group inline-flex items-center gap-2 py-1.5 px-3 mt-4 border border-[var(--theme-border)] rounded-full bg-[#FAF6EC] dark:bg-[var(--theme-surface)] w-fit no-underline transition-transform duration-200 hover:scale-105"
+          className="group inline-flex items-center gap-2 py-1.5 px-3 mt-4 border border-[var(--theme-border)] rounded-full bg-[var(--theme-surface)] w-fit no-underline transition-transform duration-200 hover:scale-105"
         >
           <span className="relative flex w-[7px] h-[7px]">
             <span className="absolute inline-flex w-full h-full rounded-full bg-[var(--theme-accent)] opacity-75 animate-ping" />
@@ -38,8 +38,8 @@ const Contact = () => {
       <div className="flex flex-col md:flex-row items-start gap-8 md:gap-14">
 
         {/* Photo */}
-        <div className="w-full md:flex-none md:w-[320px] rounded-[10px] border border-[var(--theme-border)] bg-[#FAF6EC] dark:bg-[var(--theme-surface)] shadow-lg overflow-hidden">
-          <div className="h-[34px] flex items-center gap-2 px-3.5 bg-[#F2ECDD] dark:bg-[var(--theme-surface-topbar)] border-b border-[var(--theme-border)]">
+        <div className="w-full md:flex-none md:w-[320px] rounded-[10px] border border-[var(--theme-border)] bg-[var(--theme-surface)] shadow-sm overflow-hidden">
+          <div className="h-[34px] flex items-center gap-2 px-3.5 bg-[var(--theme-surface-topbar)] border-b border-[var(--theme-border)]">
             <span className="w-[9px] h-[9px] rounded-full bg-[#C9776A] dark:bg-[#8B4A3E]" />
             <span className="w-[9px] h-[9px] rounded-full bg-[#D9A857] dark:bg-[#A67C3D]" />
             <span className="w-[9px] h-[9px] rounded-full bg-[#4FA97D] dark:bg-[#3D8B68]" />
@@ -76,7 +76,7 @@ const ContactItem = ({ code, label, value, href }) => (
     href={href}
     target={href.startsWith('http') ? '_blank' : undefined}
     rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-    className="flex items-center gap-3.5 md:gap-4 border-2 border-[var(--theme-border)] rounded-[10px] bg-[#FAF6EC] dark:bg-[var(--theme-surface)] shadow-md px-4 py-3.5 md:px-5 md:py-4 no-underline transition-all duration-200 hover:scale-[1.005] hover:border-[var(--theme-accent)]"
+    className="flex items-center gap-3.5 md:gap-4 border-2 border-[var(--theme-border)] rounded-[10px] bg-[var(--theme-surface)] shadow-sm px-4 py-3.5 md:px-5 md:py-4 no-underline transition-all duration-200 hover:scale-[1.005] hover:border-[var(--theme-accent)]"
   >
     <span className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-lg border border-[var(--theme-accent)]/30 bg-[var(--theme-accent)]/10 flex items-center justify-center font-['JetBrains_Mono'] text-[10px] md:text-[11px] text-[var(--theme-accent)]">
       {code}

@@ -57,7 +57,7 @@ const About = () => {
         <h1 className="m-0 font-['Space_Grotesk'] font-bold text-[28px] md:text-4xl leading-[1.15] text-[var(--theme-text-primary)]">Hey, I&apos;m Abdullah.</h1>
       </div>
 
-      <div className="flex flex-col gap-3.5 border border-[var(--theme-border)] rounded-xl bg-[#FAF6EC] dark:bg-[var(--theme-surface)] px-4.5 py-4.5 md:px-7 md:py-6">
+      <div className="flex flex-col gap-3.5 border border-[var(--theme-border)] rounded-xl bg-[var(--theme-surface)] px-4.5 py-4.5 md:px-7 md:py-6">
         {bio.map((p, i) => (
           <p key={i} className="m-0 font-['Work_Sans'] text-base md:text-base leading-relaxed text-[var(--theme-text-secondary)]">{p}</p>
         ))}
@@ -67,7 +67,7 @@ const About = () => {
         {skills.map((skill) => (
           <span
             key={skill}
-            className="font-['JetBrains_Mono'] text-[11px] md:text-xs text-[var(--theme-accent)] bg-[#FAF6EC] dark:bg-[var(--theme-surface)] border border-[var(--theme-border)] rounded-md py-1.5 px-3"
+            className="font-['JetBrains_Mono'] text-[11px] md:text-xs text-[var(--theme-accent)] bg-[var(--theme-surface)] border border-[var(--theme-border)] rounded-md py-1.5 px-3"
           >
             {skill}
           </span>

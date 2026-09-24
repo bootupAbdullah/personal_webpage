@@ -48,6 +48,16 @@ File: `frontend/public/sitemap.xml`
 
 Add a `<url>` entry for `https://akddev.co/blog/your-post-slug` with a `<lastmod>` matching the post's date. This is hand-maintained, not generated — easy to forget.
 
+## Theming Rules
+- All colors come from the --theme-* variables in frontend/src/index.css.
+- Never hardcode hex values in components. If a new color is needed, add a
+  variable to BOTH the :root (light) and .dark blocks.
+- Any styling change must be checked in both light and dark mode before committing.
+- Exceptions: the window dot colors (red/amber/green) in Home.jsx and Contact.jsx,
+  and FLOW_COLORS in Flow.jsx (React Flow props can't read CSS variables). These
+  are intentional. Do not convert them. If the theme palette changes, update
+  FLOW_COLORS to match.
+
 ## Branch + Deploy Workflow
 1. Create a branch: `git checkout -b feature/your-feature`
 2. Make changes, commit
