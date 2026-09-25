@@ -3,11 +3,11 @@ import useDocumentMeta from '../../../hooks/useDocumentMeta';
 const bio = [
   "I'm a software engineer who discovered programming while working in tax preparation. What started as evening and weekend learning became a passion I couldn't ignore.",
   "After nearly two years of self-study, I took a leap and completed General Assembly's intensive software engineering program. I built full-stack applications exploring everything from API integrations to user authentication, always focused on solving real problems.",
-  "Currently working as a Service Desk Analyst at IMB (International Mission Board), where I apply my technical background to systems troubleshooting, infrastructure support, and process improvement. My focus has shifted toward backend development, Go, cloud infrastructure, and DevOps — building on the systems thinking I use every day.",
+  "Currently working as a Service Desk Analyst at IMB (International Mission Board), where I apply my technical background to systems troubleshooting, infrastructure support, and process improvement. My focus has shifted toward backend development in C, Linux systems, containers, and DevOps, building on the systems thinking I use every day.",
   "My accounting background gave me discipline and an eye for detail that carries directly into development. Focused on deepening my backend and DevOps skills, and growing into engineering wherever that path leads.",
 ];
 
-const skills = ['Go', 'JavaScript', 'Node.js', 'Python', 'PostgreSQL', 'Docker', 'AWS', 'Linux', 'Shell', 'CI/CD'];
+const skills = ['C', 'Go', 'JavaScript', 'Node.js', 'Python', 'PostgreSQL', 'Docker', 'AWS', 'Linux', 'Shell', 'CI/CD'];
 
 const jobs = [
   {

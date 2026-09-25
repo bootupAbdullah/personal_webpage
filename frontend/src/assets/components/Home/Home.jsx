@@ -28,7 +28,7 @@ const socials = [
   { label: 'bs', href: 'https://bsky.app/profile/layinthegrass.bsky.social', alt: 'Bluesky' },
 ];
 
-const stack = ['Go', 'Python', 'AWS', 'Docker', 'Kubernetes', 'PostgreSQL', 'Terraform'];
+const stack = ['C', 'Linux', 'Docker', 'Go', 'Python', 'PostgreSQL', 'AWS', 'Kubernetes', 'Terraform'];
 
 const Home = () => {
   useDocumentMeta({
@@ -63,7 +63,7 @@ const Home = () => {
 
           <p className="m-0 font-['Work_Sans'] max-w-[420px] text-base leading-relaxed text-[var(--theme-text-secondary)]">
             I build and ship backend systems, cloud infrastructure, and the pipelines that hold them together.
-            Currently deep in Go, Kubernetes, and things that run on servers I don't have to think about twice.
+            Right now I'm working in C, Docker, and Linux, learning to build self-contained, reliable systems that can grow when they need to.
           </p>
 
           <div className="flex gap-2.5">
