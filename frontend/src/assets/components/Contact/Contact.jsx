@@ -1,4 +1,3 @@
-import React from 'react';
 import useDocumentMeta from '../../../hooks/useDocumentMeta';
 
 const items = [
