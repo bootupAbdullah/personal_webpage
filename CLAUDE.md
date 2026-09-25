@@ -59,11 +59,23 @@ Add a `<url>` entry for `https://akddev.co/blog/your-post-slug` with a `<lastmod
   FLOW_COLORS to match.
 
 ## Branch + Deploy Workflow
-1. Create a branch: `git checkout -b feature/your-feature`
-2. Make changes, commit
-3. Push and open a PR — CI must pass before merging
-4. Merge via squash (merge commits are not allowed on this repo)
-5. Netlify auto-deploys on merge to `main`
+1. Start from an up-to-date main: `git checkout main && git pull`
+2. Create a branch: `git checkout -b feature/your-feature` (or fix/, chore/)
+3. Make changes, commit
+4. Push and open a PR. CI (build + lint) must pass before merging
+5. Merge via squash (merge commits are not allowed on this repo)
+6. GitHub auto-deletes the remote branch. Locally: `git checkout main && git pull &&
+   git fetch --prune && git branch -D <branch>` (-D is required after squash merges)
+7. Netlify auto-deploys on merge to main. Confirm a new "Production: main@<sha>" entry
+   appears on the Netlify Deploys page within a few minutes. If it doesn't,
+   use Trigger deploy > Deploy site.
+
+## Branch Hygiene
+- One branch per task. Delete it after merge (step 6 above).
+- Don't leave work-in-progress branches unmerged for more than a few weeks.
+  Merge it, or delete it.
+- Dependabot PRs arrive grouped monthly. Merge them if CI passes. Major version bumps
+  come separately and need a manual check.
 
 ## Key File Locations
 | What | Where |
