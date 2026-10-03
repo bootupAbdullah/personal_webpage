@@ -37,4 +37,8 @@ export default [
       'react/no-unescaped-entities': 'off', // add this line
     },
   },
+  {
+    files: ['scripts/**/*.js'],
+    languageOptions: { globals: globals.node },
+  },
 ]
