@@ -5,7 +5,7 @@ export const posts = [
     subtitle: 'A fake monitor, an unkillable driver bug, and the Wayland pivot that actually made it work.',
     date: 'September 15, 2026',
     image: '/images/posts/headless-linux-game-streaming/linux-snes-hero-.png',
-    heroImage: '/images/posts/headless-linux-game-streaming/hero-image.png',
+    heroImage: '/images/posts/headless-linux-game-streaming/hero-image.jpg',
     flow: true,
     links: {
       github: 'https://github.com/bootupAbdullah/headless-linux-game-streaming',

@@ -1,10 +1,10 @@
-// Post-build step: writes dist/blog/<slug>/index.html for each post, a copy of
+// Post-build step: writes dist/blog/<slug>.html for each post, a copy of
 // the SPA shell with that post's title/description/og:*/twitter:* tags baked in.
 // Social link-unfurlers (LinkedIn, Slack, X, ...) don't run JS, so they only see
 // the raw HTML. The app itself boots exactly as before from the same bundle.
 //
-// Hosting: static hosts serve a real file before the SPA fallback (Netlify's
-// non-forced /* redirect, nginx's `try_files $uri $uri/ /index.html`).
+// Hosting: static hosts serve a real file before the SPA fallback. Netlify maps
+// /blog/<slug> to <slug>.html with no redirect; nginx needs `$uri.html` in try_files.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -60,8 +60,8 @@ for (const post of posts) {
   html = setMeta(html, 'name', 'twitter:description', post.subtitle);
   html = setMeta(html, 'name', 'twitter:image', image);
 
-  const outDir = join(distDir, 'blog', post.slug);
+  const outDir = join(distDir, 'blog');
   mkdirSync(outDir, { recursive: true });
-  writeFileSync(join(outDir, 'index.html'), html);
-  console.log(`prerender-post-meta: wrote blog/${post.slug}/index.html`);
+  writeFileSync(join(outDir, `${post.slug}.html`), html);
+  console.log(`prerender-post-meta: wrote blog/${post.slug}.html`);
 }
