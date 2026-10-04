@@ -25,7 +25,8 @@ function upsertCanonical(href) {
 
 // Sets per-page title/description/canonical for search crawlers (which render JS).
 // Social link-unfurlers (Slack, X, Discord, ...) don't run JS, so og:*/twitter:*
-// tags stay static site-wide in index.html rather than being set here.
+// tags stay static in index.html rather than being set here. Blog posts get
+// per-post og:*/twitter:* tags baked in at build time by scripts/prerender-post-meta.js.
 export default function useDocumentMeta({ title, description, path = '' }) {
   useEffect(() => {
     document.title = title ? `${title} — ${SITE_NAME}` : SITE_NAME;
